@@ -39,5 +39,29 @@ example: rmdir project - removes an empty directory entitled project from the cu
 example: top - displays a list of linux processes
 
 
-10) clear - clears the current terminal window
+10) clear: clears the current terminal window
 example: clear - clears the current terminal window
+
+
+11) ps: displays information about active processes
+example: ps - example output:
+                      PID TTY          TIME CMD
+                    10932 pts/0    00:00:00 bash
+                    11185 pts/0    00:00:00 ps
+
+12) pwd: print working directory - prints the full filename of the current directory
+example: pwd - example output: /home/michael/Documents/CMSI387/homework/shell-guide
+
+
+13) cp: copy - copies specified files or folders
+example: cp README CMSI387/  - copies the file 'README' to the folder 'CMSI387'
+
+
+14) mv: move - moves specified files or folders to a specified location
+example: mv README CMSI387/  - moves the 'README' file from its current directory to the 'CMSI387' directory
+
+
+15) df: reports file system disk space usage, it displays the amount of disk space available on the file system containing each file name argument. Default shows the space available on the currently mounted file system.
+example: df - shows the space available on the currently mounted file system
+
+
