@@ -1,0 +1,43 @@
+Michael Fraser
+January 15, 2014
+
+Command-Crib-Sheet
+
+1) cd: change directory - changes the directory to the specified path
+example: cd ~   : changes the current directory of the terminal to the home location.
+
+
+2) ls: lists directory contents
+example: ls - lists the files and folders within the current directory
+
+
+3) history: shows the command history of the terminal
+example: history - lists out the previously ran commands
+
+
+4) more: a command used for paging one screenful of text at a time
+example: history | more - lists out the previously ran commands while filtering the output to a single page of text at a time
+
+
+5) sudo: allows the user to execute a command as the superuser (or another user if settings are modified)
+example: sudo yum update - evokes administrator access to allow for the updating of the system
+
+
+6) date: lists the system date and time
+example: date - lists the date and time. (Example output: Wed Jan 15 19:55:56 PST 2014 )
+
+
+7) mkdir: make directory - makes a directory or directories (folder/folders) if they do not exist
+example: mkdir CMSI387 - makes a folder/directory entitled CMSI387
+
+
+8) rmdir: remove directory - removes a specified directory or directories, if they exist and are empty
+example: rmdir project - removes an empty directory entitled project from the current directory
+
+
+9) top: displays the linux processes that are running
+example: top - displays a list of linux processes
+
+
+10) clear - clears the current terminal window
+example: clear - clears the current terminal window
