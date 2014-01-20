@@ -1,0 +1,44 @@
+Names and Symbols
+Written by Michael Fraser
+
+filenames beginning with . (period), 
+~, /, \, .bash_profile, $, PATH, SHELL, TERM, USER, 
+HOME, LANG, /dev/null, /dev/zero, <, >, <<, >>, |, 
+||, &, &&, ;, .., !, !!, *, ?, ", '
+
+1) filenames beginning with . : the file is hidden
+    note: . also denotes the current directory
+    
+2) ~ : denotes the home directory
+
+3) / : filename path separator
+
+4) \ : used to 'escape' a charactor, allowing special characters to be used without evoking the special meaning. 
+
+5) .bash_profile : a special file that is run every time the terminal shell starts up. it can be used to run commands on shell start, such as setting environment variables.
+
+6) $ : 
+
+7) PATH : 
+
+8) SHELL : 
+
+9) TERM :
+
+10) USER :
+
+11) HOME:
+
+12) LANG
+
+13) /dev/null
+
+14) /dev/zero
+
+15) <
+
+16) >
+
+17) <<
+
+18) >>
