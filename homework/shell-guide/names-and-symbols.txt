@@ -13,7 +13,7 @@ HOME, LANG, /dev/null, /dev/zero, <, >, <<, >>, |,
 
 3) / : filename path separator
 
-4) \ : used to 'escape' a charactor, allowing special characters to be used without evoking the special meaning. 
+4) \ : used to 'escape' a character, allowing special characters to be used without evoking the special meaning. 
 
 5) .bash_profile : a special file that is run every time the terminal shell starts up. it can be used to run commands on shell start, such as setting environment variables.
 

@@ -2,6 +2,17 @@ Michael Fraser
 January 15, 2014
 
 Command-Crib-Sheet
+ 
+traceroute, tcpdump, wget, curl, ssh, scp, telnet, 
+cut, paste, tail, vi, emacs, nano, pico, ed, uptime, 
+date, env, export, time, uname, top, kill, killall, 
+du, df, hexdump, dd, od, which, locate, mount, 
+umount, chgrp, chown, users, groups, netstat, arp, 
+nc, echo, find, grep, whoami, open, who, wc, sort, 
+sed, awk, rev, dig, nslookup, diff, patch, nice, 
+make, tar, split, man, crontab, xargs, screen, 
+sudo, script, ssh-keygen, clear 
+
 
 1) cd: change directory - changes the directory to the specified path
 example: cd ~   : changes the current directory of the terminal to the home location.
@@ -64,4 +75,29 @@ example: mv README CMSI387/  - moves the 'README' file from its current director
 15) df: reports file system disk space usage, it displays the amount of disk space available on the file system containing each file name argument. Default shows the space available on the currently mounted file system.
 example: df - shows the space available on the currently mounted file system
 
+
+16) sh :  runs a command interpreter shell that reads lines from a file or terminal and interprets them.
+example: sh - runs the command interpreter shell
+
+
+17) ln: makes a link between files. the link points back to an original file.
+example: ln -s sample.txt link_to_sample.txt - makes a symbolic link called 'link_to_sample.txt' that points towards 'sample.txt'
+
+
+18) cat: used to concatenate files and print on the standard output
+example: cat > sample.txt
+Hello, this is an example using cat.
+It continues until given the signal to stop.
+Yay.
+<control-d>
+ - Prints the text provided into the text file sample.txt.
+ 
+ 
+19) less: according to the man pages, it is the "opposite of more." It then defines it as being very similar to the more command, but says it has more features. 
+
+
+20) ping - sends an ICMP echo request to a specified network host and continues to run until terminated
+example: ping localhost - requests an echo from the localhost repeatedly. 
+output: PING localhost (127.0.0.1) 56(84) bytes of data.
+64 bytes from localhost (127.0.0.1): icmp_req=1 ttl=64 time=0.029 ms
 
