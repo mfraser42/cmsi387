@@ -1,8 +1,8 @@
 Names and Symbols
 Written by Michael Fraser
 
-filenames beginning with . (period), 
-~, /, \, .bash_profile, $, PATH, SHELL, TERM, USER, 
+Undefined:
+SHELL, TERM, USER, 
 HOME, LANG, /dev/null, /dev/zero, <, >, <<, >>, |, 
 ||, &, &&, ;, .., !, !!, *, ?, ", '
 
@@ -17,23 +17,28 @@ HOME, LANG, /dev/null, /dev/zero, <, >, <<, >>, |,
 
 5) .bash_profile : a special file that is run every time the terminal shell starts up. it can be used to run commands on shell start, such as setting environment variables.
 
-6) $ : 
+6) $ : Retrieves the value of a variable.
+    Example: STR="Hello World"
+             echo STR ------------> "STR" is output
+             echo $STR -----------> "Hello World" is output
 
-7) PATH : 
+Below (indented) are some ENVIRONMENT VARIABLES. These variables are used by the shell when a user logs in to create a unique working environment for the user, which is maintained until the user logs out. 
 
-8) SHELL : 
+    7) PATH : an environment variable with a list of directories that the shell searches through when a command is entered
 
-9) TERM :
+    8) SHELL : a variable representing a pathname of a user's preferred command language interpreter. For bash: /bin/bash
 
-10) USER :
+    9) TERM : a variable holding the terminal emulator being used by UNIX
 
-11) HOME:
+    10) USER : holds the current logged in user's name
 
-12) LANG
+    11) HOME: holds the user's home directory to store files
 
-13) /dev/null
+    12) LANG: holds a default language and is set when the user first logs in
 
-14) /dev/zero
+13) /dev/null: the null device, a special file that discards all data written to it but reports that the write operation succeeded. Often referred to as the black hole, it is used for disposing of unwanted output streams of a process.
+
+14) /dev/zero: a special file that provides as many null characters as are read from it. It is often used to provide a character stream for initializing data storage.
 
 15) <
 

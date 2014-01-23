@@ -2,7 +2,8 @@ Michael Fraser
 January 15, 2014
 
 Command-Crib-Sheet
- 
+
+Undefined words:
 traceroute, tcpdump, wget, curl, ssh, scp, telnet, 
 cut, paste, tail, vi, emacs, nano, pico, ed, uptime, 
 date, env, export, time, uname, top, kill, killall, 
@@ -11,7 +12,7 @@ umount, chgrp, chown, users, groups, netstat, arp,
 nc, echo, find, grep, whoami, open, who, wc, sort, 
 sed, awk, rev, dig, nslookup, diff, patch, nice, 
 make, tar, split, man, crontab, xargs, screen, 
-sudo, script, ssh-keygen, clear 
+script, ssh-keygen
 
 
 1) cd: change directory - changes the directory to the specified path
