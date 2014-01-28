@@ -2,8 +2,7 @@ Names and Symbols
 Written by Michael Fraser
 
 Undefined:
-SHELL, TERM, USER, 
-HOME, LANG, /dev/null, /dev/zero, <, >, <<, >>, |, 
+<, >, <<, >>, |, 
 ||, &, &&, ;, .., !, !!, *, ?, ", '
 
 1) filenames beginning with . : the file is hidden

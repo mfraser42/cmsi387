@@ -1,0 +1,130 @@
+1) ps -U root -u root u   :
+
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  26928  2740 ?        Ss   Jan21   0:02 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    Jan21   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Jan21   0:19 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/u:0H]
+root         8  0.0  0.0      0     0 ?        S    Jan21   0:01 [migration/0]
+root         9  0.0  0.0      0     0 ?        S    Jan21   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    Jan21   1:08 [rcu_sched]
+root        11  0.0  0.0      0     0 ?        S    Jan21   0:00 [watchdog/0]
+root        12  0.0  0.0      0     0 ?        S    Jan21   0:00 [watchdog/1]
+root        13  0.0  0.0      0     0 ?        S    Jan21   0:17 [ksoftirqd/1]
+root        16  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/1:0H]
+root        17  0.0  0.0      0     0 ?        S    Jan21   0:00 [watchdog/2]
+root        18  0.0  0.0      0     0 ?        S    Jan21   0:08 [ksoftirqd/2]
+root        21  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/2:0H]
+root        22  0.0  0.0      0     0 ?        S    Jan21   0:00 [watchdog/3]
+root        23  0.0  0.0      0     0 ?        S    Jan21   0:13 [ksoftirqd/3]
+root        26  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/3:0H]
+root        27  0.0  0.0      0     0 ?        S<   Jan21   0:00 [cpuset]
+root        28  0.0  0.0      0     0 ?        S<   Jan21   0:00 [khelper]
+root        29  0.0  0.0      0     0 ?        S    Jan21   0:00 [kdevtmpfs]
+root        30  0.0  0.0      0     0 ?        S<   Jan21   0:00 [netns]
+root        31  0.0  0.0      0     0 ?        S    Jan21   0:00 [bdi-default]
+root        32  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kintegrityd]
+root        33  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kblockd]
+root        35  0.0  0.0      0     0 ?        S<   Jan21   0:00 [ata_sff]
+root        36  0.0  0.0      0     0 ?        S    Jan21   0:00 [khubd]
+root        37  0.0  0.0      0     0 ?        S<   Jan21   0:00 [md]
+root        38  0.0  0.0      0     0 ?        S<   Jan21   0:00 [devfreq_wq]
+root        43  0.0  0.0      0     0 ?        S    Jan21   0:00 [khungtaskd]
+root        44  0.0  0.0      0     0 ?        S    Jan21   0:00 [kswapd0]
+root        45  0.0  0.0      0     0 ?        SN   Jan21   0:00 [ksmd]
+root        46  0.0  0.0      0     0 ?        SN   Jan21   0:00 [khugepaged]
+root        47  0.0  0.0      0     0 ?        S    Jan21   0:00 [fsnotify_mark]
+root        48  0.0  0.0      0     0 ?        S    Jan21   0:00 [ecryptfs-kthrea]
+root        49  0.0  0.0      0     0 ?        S<   Jan21   0:00 [crypto]
+root        60  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kthrotld]
+root        63  0.0  0.0      0     0 ?        S<   Jan21   0:00 [binder]
+root        82  0.0  0.0      0     0 ?        S<   Jan21   0:00 [deferwq]
+root        83  0.0  0.0      0     0 ?        S<   Jan21   0:00 [charger_manager]
+root       233  0.0  0.0      0     0 ?        S<   Jan21   0:00 [firewire]
+root       236  0.0  0.0      0     0 ?        S    Jan21   0:00 [scsi_eh_0]
+root       237  0.0  0.0      0     0 ?        S    Jan21   0:00 [scsi_eh_1]
+root       239  0.0  0.0      0     0 ?        S    Jan21   0:00 [scsi_eh_2]
+root       240  0.0  0.0      0     0 ?        S    Jan21   0:00 [scsi_eh_3]
+root       241  0.0  0.0      0     0 ?        S    Jan21   0:00 [scsi_eh_4]
+root       257  0.0  0.0      0     0 ?        S<   Jan21   0:00 [ttm_swap]
+root       371  0.0  0.0      0     0 ?        S    Jan21   0:04 [jbd2/sda7-8]
+root       372  0.0  0.0      0     0 ?        S<   Jan21   0:00 [ext4-dio-unwrit]
+root       422  0.0  0.0  15272   632 ?        S    Jan21   0:00 upstart-file-bridge --daemon
+root       476  0.0  0.0  17320   904 ?        S    Jan21   0:00 upstart-udev-bridge --daemon
+root       478  0.0  0.0  21884  1640 ?        Ss   Jan21   0:00 /sbin/udevd --daemon
+root       579  0.0  0.0      0     0 ?        S<   Jan21   0:00 [cfg80211]
+root       580  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/2:1H]
+root       582  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kpsmoused]
+root       585  0.0  0.0      0     0 ?        S    Jan21   0:01 [ips-adjust]
+root       587  0.0  0.0      0     0 ?        S    Jan21   0:09 [ips-monitor]
+root       590  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/3:1H]
+root       594  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/1:1H]
+root       656  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kmpathd]
+root       657  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kmpath_handlerd]
+root       658  0.0  0.0      0     0 ?        S<   Jan21   0:00 [hd-audio0]
+root       686  0.0  0.0      0     0 ?        S<   Jan21   0:00 [hd-audio1]
+root       831  0.0  0.0  15392   648 ?        S    Jan21   0:00 upstart-socket-bridge --daemon
+root       839  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kvm-irqfd-clean]
+root       845  0.0  0.0      0     0 ?        S<   Jan21   0:00 [iwlwifi]
+root       981  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/u:1H]
+root       986  0.0  0.0      0     0 ?        S<   Jan21   0:00 [kworker/0:1H]
+root      1060  0.0  0.0 126204  5612 ?        Ss   Jan21   0:00 smbd -F
+root      1092  0.0  0.0  83412  3288 ?        Ss   Jan21   0:00 /usr/sbin/modem-manager
+root      1106  0.0  0.0  19364  2140 ?        Ss   Jan21   0:00 /usr/sbin/bluetoothd
+root      1113  0.0  0.0      0     0 ?        S<   Jan21   0:00 [krfcommd]
+root      1148  0.0  0.0  72176  3608 ?        Ss   Jan21   0:00 /usr/sbin/cupsd -F
+root      1195  0.0  0.1 257172  8336 ?        Ssl  Jan21   0:39 NetworkManager
+root      1202  0.0  0.0 196812  5356 ?        Sl   Jan21   0:02 /usr/lib/policykit-1/polkitd --no-debug
+root      1213  0.0  0.0 126720  1856 ?        S    Jan21   0:00 smbd -F
+root      1215  0.0  0.0  32268  2800 ?        Ss   Jan21   0:08 /sbin/wpa_supplicant -B -P /run/sendsigs.omit.d/wpasupplicant.pid -u -s -O /var/run/wpa_supplicant
+root      1370  0.0  0.0  70432  2812 ?        Ss   Jan21   0:00 /usr/sbin/cups-browsed
+root      1387  0.0  0.0  20024   996 tty4     Ss+  Jan21   0:00 /sbin/getty -8 38400 tty4
+root      1389  0.0  0.0  20024   984 tty5     Ss+  Jan21   0:00 /sbin/getty -8 38400 tty5
+root      1395  0.0  0.0  20024   992 tty2     Ss+  Jan21   0:00 /sbin/getty -8 38400 tty2
+root      1396  0.0  0.0  20024   996 tty3     Ss+  Jan21   0:00 /sbin/getty -8 38400 tty3
+root      1397  0.0  0.0 163824  5008 ?        Ss   Jan21   0:00 mdm
+root      1400  0.0  0.0  20024   996 tty6     Ss+  Jan21   0:00 /sbin/getty -8 38400 tty6
+root      1409  0.0  0.0   4644   960 ?        Ss   Jan21   0:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+root      1412  0.0  0.0  21328  1028 ?        Ss   Jan21   0:00 cron
+root      1421  0.0  0.0  19152   760 ?        Ss   Jan21   0:07 /usr/sbin/irqbalance
+root      1434  0.0  0.0      0     0 ?        S    Jan21   0:03 [flush-8:0]
+root      1439  0.0  0.0      0     0 ?        S<   Jan21   0:00 [iprt]
+root      1505  0.0  0.0 222228  5580 ?        S    Jan21   0:00 mdm
+root      1529  0.3  1.2 262036 73696 tty8     Rsl+ Jan21  32:08 /usr/bin/X :0 -audit 0 -auth /var/lib/mdm/:0.Xauth -nolisten tcp vt8
+root      1650  0.0  0.0  20024   992 tty1     Ss+  Jan21   0:00 /sbin/getty -8 38400 tty1
+root      1850  0.0  0.0  89312  2188 ?        Ss   Jan21   0:04 nmbd -D
+root      1867  0.0  0.0 105968  4612 ?        Ss   Jan21   0:00 /usr/sbin/winbindd -F
+root      1868  0.0  0.0 105144  2280 ?        S    Jan21   0:00 /usr/sbin/winbindd -F
+root      1869  0.0  0.0      0     0 ?        S    Jan21   0:00 [kauditd]
+root      1876  0.0  0.0 2091756 3892 ?        Sl   Jan21   0:00 /usr/sbin/console-kit-daemon --no-daemon
+root      2078  0.0  0.0 222668  4976 ?        Sl   Jan21   0:09 /usr/lib/upower/upowerd
+root      2263  0.0  0.0 264676  3472 ?        Sl   Jan21   0:01 /usr/lib/accountsservice/accounts-daemon
+root      2312  0.0  0.0 360484  5208 ?        Sl   Jan21   0:13 /usr/lib/udisks2/udisksd --no-debug
+root      4969  0.0  0.0  10712   764 ?        Ss   Jan27   0:00 /usr/sbin/inetd
+root      7608  0.0  0.0  24600   856 ?        S    Jan21   0:00 dbus-launch --autolaunch=2f6a9045c2bc8db6bf32b2d7517969bf --binary-syntax --close-stderr
+root      7609  0.0  0.0  23856   940 ?        Ss   Jan21   0:00 //bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+root     11025  0.0  0.0      0     0 ?        S    11:28   0:00 [kworker/1:0]
+root     12002  0.0  0.0  89400  2828 ?        Ss   Jan22   0:00 /usr/bin/sudo -H -S -p GNOME_SUDO_PASS -u root -- /usr/lib/linuxmint/mintUpdate/mintUpdate.py show
+root     12004  0.0  0.6 575536 36748 ?        Sl   Jan22   0:03 python /usr/lib/linuxmint/mintUpdate/mintUpdate.py show
+root     12625  0.0  0.0      0     0 ?        S    11:55   0:00 [kworker/3:3]
+root     13520  0.0  0.0      0     0 ?        S    12:15   0:00 [kworker/1:1]
+root     13674  0.0  0.0      0     0 ?        S    12:17   0:00 [kworker/2:1]
+root     14469  0.0  0.0      0     0 ?        S    12:23   0:00 [kworker/0:1]
+root     14741  0.0  0.0      0     0 ?        S    12:28   0:00 [kworker/2:2]
+root     15091  0.0  0.0      0     0 ?        S    13:38   0:00 [migration/1]
+root     15092  0.0  0.0      0     0 ?        S    13:38   0:00 [migration/2]
+root     15093  0.0  0.0      0     0 ?        S    13:38   0:00 [migration/3]
+root     15094  0.0  0.0      0     0 ?        S    13:38   0:00 [irq/44-mei]
+root     15100  0.0  0.0      0     0 ?        S    13:38   0:00 [kworker/u:24]
+root     15150  0.0  0.0      0     0 ?        S    13:38   0:00 [kworker/3:1]
+root     15153  0.0  0.0  21880  1200 ?        S    13:38   0:00 /sbin/udevd --daemon
+root     15158  0.0  0.0  21880  1172 ?        S    13:38   0:00 /sbin/udevd --daemon
+root     15385  0.0  0.0      0     0 ?        S<   13:38   0:00 [hci0]
+root     15403  0.0  0.0  10244  3816 ?        S    13:38   0:00 /sbin/dhclient -d -sf /usr/lib/NetworkManager/nm-dhcp-client.action -pf /run/sendsigs.omit.d/network-manager.dhclient-wlan0.pid -lf /var/lib/NetworkManager/dhclient-0379a3d6-9ede-433f-bcf6-956e66a12688-wlan0.lease -cf /var/lib/NetworkManager/dhclient-wlan0.conf wlan0
+root     15893  0.0  0.0      0     0 ?        S    13:49   0:00 [kworker/0:0]
+root     15906  0.0  0.0      0     0 ?        S    13:52   0:00 [kworker/u:1]
+root     16024  0.0  0.0      0     0 ?        S    13:54   0:00 [kworker/0:2]
+root     16065  0.0  0.0      0     0 ?        S    13:57   0:00 [kworker/u:0]
+root     25608  0.0  0.0 105244  2120 ?        S    Jan25   0:00 /usr/sbin/winbindd -F
+root     25609  0.0  0.0 105968  1756 ?        S    Jan25   0:00 /usr/sbin/winbindd -F
