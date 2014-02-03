@@ -1,0 +1,98 @@
+ 
+3) Using du:
+ 
+a) du -d 1 | sort -nk1 -r | head -2
+36969136	.
+18944660	./.local
+
+The first number describes the disk usage by the entire home directory, and the second entry describes the hidden local sub directory. To remove the current directory, pipe the previous command into " sed '1 d' "
+
+b) du | grep Krewella
+found the disk usage of the music albums by Krewella
+4584	./Music/Krewella feat. Patrick Stump and Travis Barker/Get Wet
+4588	./Music/Krewella feat. Patrick Stump and Travis Barker
+4400	./Music/Krewella feat. Pegboard Nerds/Get Wet
+4404	./Music/Krewella feat. Pegboard Nerds
+44304	./Music/Krewella/Get Wet
+44308	./Music/Krewella
+
+
+4a) on creation - 
+    ls -i >> inode387.txt
+14027364 CMSI284
+14027910 CMSI387
+14025672 Desktop
+14025676 Documents
+14025673 Downloads
+14027952 inode387.txt
+14027256 Music
+14027257 Pictures
+14025675 Public
+14025680 public_html
+14027885 repos
+14025674 Templates
+14027258 Videos
+
+b) moved to public_html/test
+    ls -i >> inode387.txt
+14027845 account.html
+14027846 account.html~
+14027847 character.html
+14027851 feedback.html
+14027853 help.html
+14027861 index.html
+14027952 inode387.txt
+14027875 README.md
+14027862 rpg.css
+14027863 rpg.js
+14027876 sdr-370.pdf
+14027864 settings.html
+
+c) moved to /tmp/
+    ls -i >> inode387.txt
+2102619 hsperfdata_aruiz25
+1972684 hsperfdata_avreelan
+2102620 hsperfdata_cbillin3
+1972276 hsperfdata_dondi
+1972357 hsperfdata_gleis
+1972361 hsperfdata_hdelgadi
+1972691 hsperfdata_kgosch
+1972686 hsperfdata_kmcgee3
+1972688 hsperfdata_kmeilak
+1972278 hsperfdata_ksherbin
+1972687 hsperfdata_lhunt6
+1972432 hsperfdata_mmalefyt
+1972360 hsperfdata_mpetredi
+1972358 hsperfdata_pdorin
+1972277 hsperfdata_slouie4
+1972689 hsperfdata_tbramant
+1972433 hsperfdata_tvilgaly
+1972685 hsperfdata_vkuehn
+2102618 hsperfdata_waverill
+1972692 inode387.txt
+1972760 libevent-2.0.21-stable
+1972758 libevent-2.0.21-stable.tar.gz
+1972759 ncurses-5.9.tar.gz
+2102622 ssh-cvJGD29027
+2102537 tmux-1261
+1972757 tmux-1.8.tar.gz
+2102624 update-manager-xM7bH8
+
+d) moved back to ~
+    ls -i >> inode387.txt
+14027364 CMSI284
+14027910 CMSI387
+14025672 Desktop
+14025676 Documents
+14025673 Downloads
+14027952 inode387.txt
+14027256 Music
+14027257 Pictures
+14025675 Public
+14025680 public_html
+14027885 repos
+14025674 Templates
+14027258 Videos
+
+e) to get only the output pertaining to the file inode397.txt use
+    ls -i | grep inode387 >> inode387.txt

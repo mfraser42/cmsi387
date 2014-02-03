@@ -1,4 +1,7 @@
-1) ps -U root -u root u   :
+Written by Michael Fraser
+Assistance by Google Search, and a variety of websites about the usage of ps. The man pages of ps are just a bit too un-user-friendly.
+
+1) ps uU root:
 
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.0  26928  2740 ?        Ss   Jan21   0:02 /sbin/init
@@ -128,3 +131,104 @@ root     16024  0.0  0.0      0     0 ?        S    13:54   0:00 [kworker/0:2]
 root     16065  0.0  0.0      0     0 ?        S    13:57   0:00 [kworker/u:0]
 root     25608  0.0  0.0 105244  2120 ?        S    Jan25   0:00 /usr/sbin/winbindd -F
 root     25609  0.0  0.0 105968  1756 ?        S    Jan25   0:00 /usr/sbin/winbindd -F
+
+
+2) ps uU michael >> process-gymnastics.txt
+
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+michael   1873  0.0  0.1 304960  8876 ?        SLl  Jan21   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+michael   1949  0.0  0.3 554008 18596 ?        Ssl  Jan21   0:04 gnome-session --session cinnamon
+michael   2030  0.0  0.0  12616   316 ?        Ss   Jan21   0:00 /usr/bin/ssh-agent /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch x-session-manager
+michael   2033  0.0  0.0  24600   852 ?        S    Jan21   0:00 /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch x-session-manager
+michael   2034  0.0  0.0  26136  2968 ?        Ss   Jan21   0:07 //bin/dbus-daemon --fork --print-pid 5 --print-address 9 --session
+michael   2044  0.0  0.0 337292  3252 ?        Sl   Jan21   0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+michael   2048  0.0  0.0  23988  1568 ?        S    Jan21   0:00 /bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+michael   2051  0.0  0.0 124828  3468 ?        Sl   Jan21   0:01 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+michael   2059  0.0  0.5 1035308 30988 ?       Sl   Jan21   2:19 /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+michael   2074  0.1  0.1 431064  8788 ?        Sl   Jan21  18:25 /usr/bin/pulseaudio --start --log-target=syslog
+michael   2129  0.0  0.0 271108  4196 ?        Sl   Jan21   0:02 /usr/lib/gvfs/gvfsd
+michael   2143  0.0  0.0 336776  3060 ?        Sl   Jan21   0:00 /usr/lib/gvfs//gvfsd-fuse -f /run/user/michael/gvfs
+michael   2260  0.0  0.3 267780 19368 ?        Sl   Jan21   0:00 /usr/bin/python /usr/bin/cinnamon-launcher
+michael   2273  0.3  2.7 1820340 161868 ?      Sl   Jan21  59:57 cinnamon --replace
+michael   2274  0.0  0.0  20392  1228 ?        S    Jan21   1:21 syndaemon -i 1.0 -t -K -R
+michael   2281  0.0  0.5 767456 31276 ?        Sl   Jan21   0:42 nm-applet
+michael   2282  0.0  0.1 245460  9044 ?        Sl   Jan21   0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+michael   2283  0.0  0.3 606112 18696 ?        Sl   Jan21   0:02 /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
+michael   2289  0.0  0.7 944840 42756 ?        Sl   Jan21   0:52 nemo -n
+michael   2306  0.0  0.0 214288  5416 ?        Sl   Jan21   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+michael   2321  0.0  0.0  57280  3032 ?        S    Jan21   0:01 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+michael   2341  0.0  0.0 191384  2728 ?        Sl   Jan21   0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+michael   2345  0.0  0.0 285532  3284 ?        Sl   Jan21   0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+michael   2350  0.0  0.0 203548  3296 ?        Sl   Jan21   0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+michael   2374  0.0  0.0 384184  4880 ?        Sl   Jan21   0:05 /usr/lib/gvfs/gvfsd-trash --spawner :1.9 /org/gtk/gvfs/exec_spaw/0
+michael   2412  0.0  0.0 120324  3388 ?        Sl   Jan21   0:00 /usr/lib/gvfs/gvfsd-metadata
+michael   2487  0.0  0.3 371792 21516 ?        Sl   Jan21   0:23 cinnamon-screensaver
+michael   5631  0.0  0.0 178132  2756 ?        Sl   Jan21   0:00 /usr/lib/dconf/dconf-service
+michael  12001  0.0  0.2 391772 16936 ?        Sl   Jan22   0:00 gksudo --message Please enter your password to start the update manager /usr/lib/linuxmint/mintUpdate/mintUpdate.py show
+michael  18251  0.0  0.1 479148 10624 ?        Sl   Jan23   0:05 /usr/lib/gvfs/gvfsd-http --spawner :1.9 /org/gtk/gvfs/exec_spaw/1
+michael  18255  0.0  0.0   4444   628 ?        S    Jan23   0:00 sh -c /usr/lib/x86_64-linux-gnu/libproxy/0.4.7/pxgsettings org.gnome.system.proxy org.gnome.system.proxy.http org.gnome.system.proxy.https org.gnome.system.proxy.ftp org.gnome.system.proxy.socks
+michael  18256  0.0  0.0 188416  3060 ?        Sl   Jan23   0:00 /usr/lib/x86_64-linux-gnu/libproxy/0.4.7/pxgsettings org.gnome.system.proxy org.gnome.system.proxy.http org.gnome.system.proxy.https org.gnome.system.proxy.ftp org.gnome.system.proxy.socks
+michael  18405  0.0  0.0  31852  2168 ?        Ss   Jan28   0:00 SCREEN
+michael  18406  0.0  0.0  26164  3180 pts/2    Ss+  Jan28   0:00 /bin/bash
+michael  18456  0.0  0.0  26188  3224 pts/3    Ss+  Jan28   0:00 /bin/bash
+michael  20610  0.0  0.0  26164  3196 pts/0    Ss+  Jan28   0:00 /bin/bash
+michael  26626  0.0  0.0 270192  2996 ?        Sl   Jan31   0:00 /usr/lib/gvfs/gvfsd-burn --spawner :1.9 /org/gtk/gvfs/exec_spaw/2
+michael  28193  0.0  0.0  16568  1512 ?        S    12:40   0:00 bash /usr/bin/banshee --redirect-log --play-enqueued
+michael  28199  0.3  1.5 2006756 93184 ?       Sl   12:40   1:46 banshee /usr/lib/banshee/Banshee.exe --redirect-log --play-enqueued
+michael  30069  1.8  2.0 930348 121224 ?       SLl  21:49   0:10 /opt/google/chrome/chrome       
+michael  30074  0.0  0.1 311976  9596 ?        S    21:49   0:00 /opt/google/chrome/chrome --type=sandbox-ipc
+michael  30076  0.0  0.0   6508   396 ?        S    21:49   0:00 /opt/google/chrome/chrome-sandbox /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia
+michael  30077  0.1  0.5 368744 31492 ?        S    21:49   0:00 /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia
+michael  30081  0.0  0.0 160040  4908 ?        S    21:49   0:00 /opt/google/chrome/nacl_helper
+michael  30082  0.0  0.2 393332 14700 ?        S    21:49   0:00 /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia
+michael  30104  0.0  0.6 968524 36856 ?        Sl   21:49   0:00 /opt/google/chrome/chrome --type=renderer --lang=en-US --force-fieldtrials=AutocompleteDynamicTrial_2/Postperiod_RestoreNavsuggest_Stable/DeferBackgroundExtensionCreation/RateLimited/Prerender/PrerenderEnabled/PrerenderLocalPredictorSpec/Label=Stable3:LocalPredictor=Enabled:SideEffectFreeWhitelist=Enabled:MaxConcurrentPrerenders=3:PrerenderPriorityHalfLifeTimeSeconds=30:PrerenderAlwaysControl=Enabled:SkipHTTPS=Enabled/Test0PercentDefault/group_01/UMA-Dynamic-Binary-Uniformity-Trial/default/UMA-New-Install-Uniformity-Trial/Control/UMA-Population-Restrict/normal/UMA-Session-Randomized-Uniformity-Trial-5-Percent/group_08/UMA-Uniformity-Trial-1-Percent/group_01/UMA-Uniformity-Trial-10-Percent/group_02/UMA-Uniformity-Trial-100-Percent/group_01/UMA-Uniformity-Trial-20-Percent/group_04/UMA-Uniformity-Trial-5-Percent/group_06/UMA-Uniformity-Trial-50-Percent/group_01/ --enable-deadline-scheduling --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia --extension-process --renderer-print-preview --disable-accelerated-2d-canvas --disable-accelerated-video-decode --channel=30069.0.1308406869
+michael  30117  0.0  0.6 971408 39404 ?        Sl   21:49   0:00 /opt/google/chrome/chrome --type=renderer --lang=en-US --force-fieldtrials=AutocompleteDynamicTrial_2/Postperiod_RestoreNavsuggest_Stable/DeferBackgroundExtensionCreation/RateLimited/Prerender/PrerenderEnabled/PrerenderLocalPredictorSpec/Label=Stable3:LocalPredictor=Enabled:SideEffectFreeWhitelist=Enabled:MaxConcurrentPrerenders=3:PrerenderPriorityHalfLifeTimeSeconds=30:PrerenderAlwaysControl=Enabled:SkipHTTPS=Enabled/Test0PercentDefault/group_01/UMA-Dynamic-Binary-Uniformity-Trial/default/UMA-New-Install-Uniformity-Trial/Control/UMA-Population-Restrict/normal/UMA-Session-Randomized-Uniformity-Trial-5-Percent/group_08/UMA-Uniformity-Trial-1-Percent/group_01/UMA-Uniformity-Trial-10-Percent/group_02/UMA-Uniformity-Trial-100-Percent/group_01/UMA-Uniformity-Trial-20-Percent/group_04/UMA-Uniformity-Trial-5-Percent/group_06/UMA-Uniformity-Trial-50-Percent/group_01/ --enable-deadline-scheduling --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia --extension-process --renderer-print-preview --disable-webgl --disable-pepper-3d --disable-gl-multisampling --disable-accelerated-compositing --disable-accelerated-2d-canvas --disable-accelerated-video-decode --channel=30069.1.185141935
+michael  30141  0.0  0.6 971440 41224 ?        Sl   21:49   0:00 /opt/google/chrome/chrome --type=renderer --lang=en-US --force-fieldtrials=AutocompleteDynamicTrial_2/Postperiod_RestoreNavsuggest_Stable/DeferBackgroundExtensionCreation/RateLimited/ManagedModeLaunch/Active/OmniboxBundledExperimentV1/Standard/Prerender/PrerenderEnabled/PrerenderLocalPredictorSpec/Label=Stable3:LocalPredictor=Enabled:SideEffectFreeWhitelist=Enabled:MaxConcurrentPrerenders=3:PrerenderPriorityHalfLifeTimeSeconds=30:PrerenderAlwaysControl=Enabled:SkipHTTPS=Enabled/Test0PercentDefault/group_01/UMA-Dynamic-Binary-Uniformity-Trial/default/UMA-New-Install-Uniformity-Trial/Control/UMA-Population-Restrict/normal/UMA-Session-Randomized-Uniformity-Trial-5-Percent/group_08/UMA-Uniformity-Trial-1-Percent/group_01/UMA-Uniformity-Trial-10-Percent/group_02/UMA-Uniformity-Trial-100-Percent/group_01/UMA-Uniformity-Trial-20-Percent/group_04/UMA-Uniformity-Trial-5-Percent/group_06/UMA-Uniformity-Trial-50-Percent/group_01/ --enable-deadline-scheduling --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia --extension-process --renderer-print-preview --disable-webgl --disable-pepper-3d --disable-gl-multisampling --disable-accelerated-compositing --disable-accelerated-2d-canvas --disable-accelerated-video-decode --channel=30069.4.1316909299
+michael  30244  0.3  0.9 979936 55672 ?        Sl   21:49   0:01 /opt/google/chrome/chrome --type=renderer --lang=en-US --force-fieldtrials=AutocompleteDynamicTrial_2/Postperiod_RestoreNavsuggest_Stable/DeferBackgroundExtensionCreation/RateLimited/ManagedModeLaunch/Active/OmniboxBundledExperimentV1/Standard/Prerender/PrerenderEnabled/PrerenderLocalPredictorSpec/Label=Stable3:LocalPredictor=Enabled:SideEffectFreeWhitelist=Enabled:MaxConcurrentPrerenders=3:PrerenderPriorityHalfLifeTimeSeconds=30:PrerenderAlwaysControl=Enabled:SkipHTTPS=Enabled/Test0PercentDefault/group_01/UMA-Dynamic-Binary-Uniformity-Trial/default/UMA-New-Install-Uniformity-Trial/Control/UMA-Population-Restrict/normal/UMA-Session-Randomized-Uniformity-Trial-5-Percent/group_08/UMA-Uniformity-Trial-1-Percent/group_01/UMA-Uniformity-Trial-10-Percent/group_02/UMA-Uniformity-Trial-100-Percent/group_01/UMA-Uniformity-Trial-20-Percent/group_04/UMA-Uniformity-Trial-5-Percent/group_06/UMA-Uniformity-Trial-50-Percent/group_01/ --enable-deadline-scheduling --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia --renderer-print-preview --disable-webgl --disable-pepper-3d --disable-gl-multisampling --disable-accelerated-compositing --disable-accelerated-2d-canvas --disable-accelerated-video-decode --channel=30069.12.1231994378
+michael  30323  0.3  0.3 633144 20576 ?        Sl   21:50   0:02 gnome-terminal
+michael  30334  0.0  0.0  14836   844 ?        S    21:50   0:00 gnome-pty-helper
+michael  30335  0.0  0.0  26240  3388 pts/4    Ss   21:50   0:00 bash
+michael  30512  0.5  0.6 680540 36632 ?        Sl   21:52   0:01 gedit
+michael  30524  0.0  0.0  22612  1872 pts/4    T    21:54   0:00 man cat
+michael  30535  0.0  0.0  13748   984 pts/4    T    21:54   0:00 pager -s
+michael  30558  0.0  0.0  22612  1872 pts/4    S+   21:57   0:00 man ps
+michael  30569  0.0  0.0  13748   984 pts/4    S+   21:57   0:00 pager -s
+michael  30574  0.1  0.0  26232  3384 pts/5    Ss   21:58   0:00 bash
+michael  30628  0.0  0.0  22644  1328 pts/5    R+   21:59   0:00 ps uU michael
+
+3) a) most real memory: 
+- ps aux | sort -nrk 3 | head -1
+
+michael  30749  2.6  1.0 1021560 63656 ?       Sl   22:12   0:04 /opt/google/chrome/chrome --type=renderer --lang=en-US --force-fieldtrials=AutocompleteDynamicTrial_2/Postperiod_RestoreNavsuggest_Stable/DeferBackgroundExtensionCreation/RateLimited/ManagedModeLaunch/Active/NetworkConnectivity/disable_network_stats/OmniboxBundledExperimentV1/Standard/Prerender/PrerenderEnabled/PrerenderFromOmnibox/OmniboxPrerenderEnabled/PrerenderLocalPredictorSpec/Label=Stable3:LocalPredictor=Enabled:SideEffectFreeWhitelist=Enabled:MaxConcurrentPrerenders=3:PrerenderPriorityHalfLifeTimeSeconds=30:PrerenderAlwaysControl=Enabled:SkipHTTPS=Enabled/Test0PercentDefault/group_01/UMA-Dynamic-Binary-Uniformity-Trial/default/UMA-New-Install-Uniformity-Trial/Control/UMA-Population-Restrict/normal/UMA-Session-Randomized-Uniformity-Trial-5-Percent/group_08/UMA-Uniformity-Trial-1-Percent/group_01/UMA-Uniformity-Trial-10-Percent/group_02/UMA-Uniformity-Trial-100-Percent/group_01/UMA-Uniformity-Trial-20-Percent/group_04/UMA-Uniformity-Trial-5-Percent/group_06/UMA-Uniformity-Trial-50-Percent/group_01/ --enable-deadline-scheduling --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia --renderer-print-preview --disable-webgl --disable-pepper-3d --disable-gl-multisampling --disable-accelerated-compositing --disable-accelerated-2d-canvas --disable-accelerated-video-decode --channel=30069.22.1316575501
+ 
+ 
+3) b) most virtual memory: ps aux | sort -nrk 4 | head -1
+
+michael   2273  0.3  2.7 1820476 161868 ?      Rl   Jan21  60:41 cinnamon --replace
+ 
+ 
+4) other users on my.cs.lmu.edu:
+- ssh mfraser1@my.cs.lmu.edu
+- 'password'
+- ps aux | awk '{ print $1 }' | sed '! d' | sort | uniq >> users.txt
+(processes - only first column - remove header - sort - remove non-unique lines)
+- ctrl+d
+- scp mfraser1@my.cs.lmu.edu:users.txt users.txt
+- 'password'
+- cat < users.txt >> process-gymnastics.txt
+ 
+1000
+102
+aalzaid1
+akerawa2
+aschne19
+daemon
+dondi
+mfraser1
+mysql
+ntp
+postfix
+root
+statd
+syslog
+www-data
