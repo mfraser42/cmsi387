@@ -1,4 +1,7 @@
- 
+1) In the folder io-gymnastics-pictures, a file called Proof_of_SSH_Tunneling.png has a screenshot of the ssh command and the connection to the localhost port pertaining to the ssh tunnel. 
+
+2) Screenshots pertaining to using the 'screen' command can be found in a folder titled io-gymnastics-pictures. A file called Problem2-First-Run_Ping_In_Screen.png shows when the screen was first initialized with a long running 'ping localhost.' A file called Problem2-Return_to_Screen.png shows the return to the long running process in the screen.
+
 3) Using du:
  
 a) du -d 1 | sort -nk1 -r | head -2
@@ -96,3 +99,26 @@ d) moved back to ~
 
 e) to get only the output pertaining to the file inode397.txt use
     ls -i | grep inode387 >> inode387.txt
+    
+
+5) Mount points:    
+
+/dev/sda7 on / type ext4 (rw,errors=remount-ro)
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+none on /sys/fs/cgroup type tmpfs (rw)
+none on /sys/fs/fuse/connections type fusectl (rw)
+none on /sys/kernel/debug type debugfs (rw)
+none on /sys/kernel/security type securityfs (rw)
+udev on /dev type devtmpfs (rw,mode=0755)
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+none on /run/user type tmpfs (rw,noexec,nosuid,nodev,size=104857600,mode=0755)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noexec,nosuid,nodev)
+gvfsd-fuse on /run/user/michael/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,user=michael)
+/dev/sda2 on /media/michael/WINDOWS7 type vfat (rw,nosuid,nodev,uid=1000,gid=1000,shortname=mixed,dmask=0077,utf8=1,showexec,flush,uhelper=udisks2)
+/dev/sdb1 on /media/michael/Cruzer type vfat (rw,nosuid,nodev,uid=1000,gid=1000,shortname=mixed,dmask=0077,utf8=1,showexec,flush,uhelper=udisks2)
+
+The second to last line corresponds to a section of memory space that has been partitioned off, for the intended use of installing Windows. The last line corresponds to a USB called 'Cruzer.' The first line appears to be another partition, corresponding to a different flavor of linux. Somewhere in there should be something corresponding to a DVD, although it is not obvious to me.

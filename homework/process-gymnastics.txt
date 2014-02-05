@@ -1,5 +1,6 @@
 Written by Michael Fraser
-Assistance by Google Search, and a variety of websites about the usage of ps. The man pages of ps are just a bit too un-user-friendly.
+2/4/14
+Assistance by Google Search, and a variety of websites about the usage of ps. The man pages of ps are just a bit too un-user-friendly (the man pages in general are).
 
 1) ps uU root:
 
@@ -196,12 +197,13 @@ michael  30569  0.0  0.0  13748   984 pts/4    S+   21:57   0:00 pager -s
 michael  30574  0.1  0.0  26232  3384 pts/5    Ss   21:58   0:00 bash
 michael  30628  0.0  0.0  22644  1328 pts/5    R+   21:59   0:00 ps uU michael
 
+
 3) a) most real memory: 
 - ps aux | sort -nrk 3 | head -1
 
 michael  30749  2.6  1.0 1021560 63656 ?       Sl   22:12   0:04 /opt/google/chrome/chrome --type=renderer --lang=en-US --force-fieldtrials=AutocompleteDynamicTrial_2/Postperiod_RestoreNavsuggest_Stable/DeferBackgroundExtensionCreation/RateLimited/ManagedModeLaunch/Active/NetworkConnectivity/disable_network_stats/OmniboxBundledExperimentV1/Standard/Prerender/PrerenderEnabled/PrerenderFromOmnibox/OmniboxPrerenderEnabled/PrerenderLocalPredictorSpec/Label=Stable3:LocalPredictor=Enabled:SideEffectFreeWhitelist=Enabled:MaxConcurrentPrerenders=3:PrerenderPriorityHalfLifeTimeSeconds=30:PrerenderAlwaysControl=Enabled:SkipHTTPS=Enabled/Test0PercentDefault/group_01/UMA-Dynamic-Binary-Uniformity-Trial/default/UMA-New-Install-Uniformity-Trial/Control/UMA-Population-Restrict/normal/UMA-Session-Randomized-Uniformity-Trial-5-Percent/group_08/UMA-Uniformity-Trial-1-Percent/group_01/UMA-Uniformity-Trial-10-Percent/group_02/UMA-Uniformity-Trial-100-Percent/group_01/UMA-Uniformity-Trial-20-Percent/group_04/UMA-Uniformity-Trial-5-Percent/group_06/UMA-Uniformity-Trial-50-Percent/group_01/ --enable-deadline-scheduling --enable-crash-reporter=D4B3242C965C64495B7AD49DC7E8EAA4,Linux Mint 15 Olivia --renderer-print-preview --disable-webgl --disable-pepper-3d --disable-gl-multisampling --disable-accelerated-compositing --disable-accelerated-2d-canvas --disable-accelerated-video-decode --channel=30069.22.1316575501
  
- 
+  
 3) b) most virtual memory: ps aux | sort -nrk 4 | head -1
 
 michael   2273  0.3  2.7 1820476 161868 ?      Rl   Jan21  60:41 cinnamon --replace
@@ -210,7 +212,7 @@ michael   2273  0.3  2.7 1820476 161868 ?      Rl   Jan21  60:41 cinnamon --repl
 4) other users on my.cs.lmu.edu:
 - ssh mfraser1@my.cs.lmu.edu
 - 'password'
-- ps aux | awk '{ print $1 }' | sed '! d' | sort | uniq >> users.txt
+- ps aux | awk '{ print $1 }' | sed '1 d' | sort | uniq >> users.txt
 (processes - only first column - remove header - sort - remove non-unique lines)
 - ctrl+d
 - scp mfraser1@my.cs.lmu.edu:users.txt users.txt
