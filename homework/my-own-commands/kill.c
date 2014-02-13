@@ -5,10 +5,11 @@
 #include <linux/types.h>
 #include <signal.h>
 #include <string.h>
+#include <stdio.h>
 
 int main(int argc, char *argv[]) {
 
-  int result = syscall(62, argv[1], 0); 
+  int result = syscall(62, atoi(argv[1]), 9);
 
   // A result of -1 means that something went wrong. 
   if (result == -1) {

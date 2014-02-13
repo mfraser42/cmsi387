@@ -6,17 +6,13 @@
 #include <linux/unistd.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int main(int argc, char *argv[]) {
 
+  printf("process is running... \n");
+  printf("Terminating now. \n");
   int result = syscall(60, 0);
+  printf("Hellooooooo\n");
 
-
-
-  // A result of -1 means that something went wrong.
-  if (result == -1) {
-    // Don't use this error message in "real" programs. O_o
-    char *errorMessage = "Herp derp mkderp\n";
-    syscall(4, 2, errorMessage, strlen(errorMessage));
-  }
 }
