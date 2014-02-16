@@ -1,14 +1,23 @@
+/* Written by Michael Fraser */
+/**
+ * This program demonstrates invocation of the rmdir
+ * system call (84) (64-bit) using the syscall function.
+ * Can handle multiple directories and removes all of them.
+ * Has no way of handling non-empty directories. 
+ */
 #include <unistd.h>
 #include <string.h>
+#include <errno.h>
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-	int result = syscall(84, argv[1]);
+
+	int i = argc - 1;
+    while ( i > 0 ) {
+        if (syscall(84, argv[i]) == -1) { // 40 is 32-bit sys call
+            printf("ERROR: %s\n", strerror(errno)); 
+        }
+        i--;
+    }
 	
-	// Was attempting to allow optional arguments, so it can remove multiple directories at once. C does not support that apparently?
-	
-	if(result == -1) {
-		char *errorMessage = "There is a problem with removing the directory.\nBe sure to check the name is correctly written.\n";
-		syscall(1, 2, errorMessage, strlen(errorMessage));
-	}
 }

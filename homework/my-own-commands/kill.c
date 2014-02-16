@@ -2,6 +2,9 @@
  * Utilizes 64-bit system calls.
  * This program demonstrates invocation of the kill
  * system call (37) using the syscall function.
+ * This force kills the process (signal 9), use
+ * with caution.
+ * Input required is a process ID number. 
  */
 #include <linux/types.h>
 #include <signal.h>

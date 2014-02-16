@@ -1,7 +1,8 @@
+/* Written by Dondi, improved upon by Michael */
 /**
  * This program demonstrates invocation of the alarm
- * system call (1) using the syscall function.
- * The required input is should be a value in seconds. 
+ * system call (37) using the syscall function.
+ * The required input should be a value in seconds. 
  * This value is the amount of time until which
  * an infinite loop is terminated by the syscall. 
  */
@@ -19,6 +20,8 @@ int main(int argc, char *argv[]) {
     printf("%ld\n", counter);
     counter++;
     sleep(1); 
+    // supposedly messing with alarm clock and sleep simultaneously
+    // can be risky, but it seems to work fine here.
   }
-  // Not sure where I would include an "if (result == -1) {" statement.. 
+  // According to tutorialspoint, there are no errors for this syscall.
 }
