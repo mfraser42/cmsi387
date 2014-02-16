@@ -1,4 +1,5 @@
 /**
+ * Utilizes 64-bit system calls.
  * This program demonstrates invocation of the kill
  * system call (37) using the syscall function.
  */
@@ -9,12 +10,12 @@
 
 int main(int argc, char *argv[]) {
 
-  int result = syscall(62, atoi(argv[1]), 9);
+  int result = syscall(62, atoi(argv[1]), 9); // 37 is sys call for 32-bit.
 
   // A result of -1 means that something went wrong. 
   if (result == -1) {
-    // Don't use this error message in "real" programs. O_o
-    char *errorMessage = "Herp derp mkderp\n";
-    syscall(4, 2, errorMessage, strlen(errorMessage));
+    char *errorMessage = "Error killing process. Process may still be active.\n";
+    syscall(1, 2, errorMessage, strlen(errorMessage));
   }
+  
 }
