@@ -234,3 +234,7 @@ root
 statd
 syslog
 www-data
+
+# JD: Note the exercise wanted users *other* than root and you, so ideally
+#     you add one more step that removes root and mfraser1 from the list
+#     of names.

@@ -122,3 +122,5 @@ gvfsd-fuse on /run/user/michael/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,user=
 /dev/sdb1 on /media/michael/Cruzer type vfat (rw,nosuid,nodev,uid=1000,gid=1000,shortname=mixed,dmask=0077,utf8=1,showexec,flush,uhelper=udisks2)
 
 The second to last line corresponds to a section of memory space that has been partitioned off, for the intended use of installing Windows. The last line corresponds to a USB called 'Cruzer.' The first line appears to be another partition, corresponding to a different flavor of linux. Somewhere in there should be something corresponding to a DVD, although it is not obvious to me.
+
+# JD: It's not the second-to-last line? (the DVD I mean---did you insert a Windows 7 disc?)
