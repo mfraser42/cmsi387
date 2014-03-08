@@ -5,6 +5,8 @@
  * Can handle multiple directories and removes all of them.
  * Has no way of handling non-empty directories. 
  */
+// JD: Nice value-add there.  Have you tried to see what happens when
+//     you use a wildcard (e.g., test*dir)?
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>

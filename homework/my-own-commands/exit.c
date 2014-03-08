@@ -19,7 +19,8 @@ int main(int argc, char *argv[]) {
     char* errorMessage = "There was an error with the exit system call.\n";
     syscall(1, 2, errorMessage, strlen(errorMessage)); 
   }
-  
+
+  // JD: Nice move.
   printf("Example of code section not reached due to the system call. \n");
   
 }

@@ -22,11 +22,17 @@ int main(int argc, char *argv[]) {
 	} else {
 	    time_sec.tv_nsec = 0;
 	}
-	
+
+    // JD: Some signal handling would have been cool here to show off more
+    //     of nanosleep's functionality.
+
+    // JD: The if below is not spaced in the same way as the one above.
 	if(syscall(35, &time_sec, &time_sec) < 0) {
 	    printf("ERROR: %s\n", strerror(errno)); 
 	    // nifty little function - returns the error message
 	    // associated with the errno.
+
+        // JD: Good find!
 	}
 	
 }
