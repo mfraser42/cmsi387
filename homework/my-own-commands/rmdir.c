@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
 	int i = argc - 1;
     while ( i > 0 ) {
-        if (syscall(84, argv[i]) == -1) { // 40 is 32-bit sys call
+        if ( syscall(84, argv[i]) == -1 ) { // 40 is 32-bit sys call
             printf("ERROR: %s\n", strerror(errno)); 
         }
         i--;

@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     //     of nanosleep's functionality.
 
     // JD: The if below is not spaced in the same way as the one above.
-	if(syscall(35, &time_sec, &time_sec) < 0) {
+	if( syscall(35, &time_sec, &time_sec) < 0 ) {
 	    printf("ERROR: %s\n", strerror(errno)); 
 	    // nifty little function - returns the error message
 	    // associated with the errno.
