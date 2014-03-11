@@ -12,6 +12,64 @@
     </head>
         
     <body>
-            
+        <h1> Building, Installing, and Modifying the Ubuntu 13.10 Kernel </h1>
+        <h4> Michael Fraser, Loyola Marymount University </h4>
+        
+        <h2> Prerequisites </h2>
+        <ol>
+            <li> Computer or virtual machine running Ubuntu (any still-relative version). </li>
+            <li> The following packages should be present with your version of Ubuntu:
+                <ol> 
+                    <li> git </li>
+                    <li> make </li>
+                    <li> dpkg </li>
+                    <li> a text editor, such as gedit </li>
+                </ol> 
+            </li>
+            <li> The following packages do not come with Ubuntu and need to be installed separately: 
+                <ol> 
+                    <li> kernel-package </li>
+                    <li> fakeroot </li>
+                    <li> libncurses5-dev </li>
+                </ol> 
+            </li>
+            <li> A connection to the internet </li>
+            <li> Root privileges </li>
+        </ol>
+        
+        <h2> Step 1: Get the Kernel Source </h2>
+        <p>Ubuntu sources to different Linux Kernels are maintained at ubuntu.kernel.org. In your terminal, move to a desired location into which you will download the kernel source. Then run the following command, which is specific to Ubuntu Trusty (13.10): </p>
+        <code> git clone git://kernel.ubuntu.com/ubuntu/ubuntu-trusty.git </code>.
+        <p> The same command can be altered for different versions of Ubuntu in the following manner: </p>
+        <code> git clone git://kernel.ubuntu.com/ubuntu/ubuntu-&#60;version&#62;.git </code>,
+        <p> where <code>&#60;version&#62;</code> is the name of the desired ubuntu version, such as trusty, oneiric, etc. This source will be downloaded into a directory according to the name of the Ubuntu version, and in the case of Ubuntu Trusty, a directory called <code> ubuntu-trusty </code> will be created. You now have the kernel source! </p>
+        
+        <h2> Step 2: Setup the Build Environment</h2>
+        <p> If you have not built a kernel on your current system previously, there are necessary packages to install before the kernel can be built. If you have built a kernel on your system before, you can skip this step. Running the following code will install the dependent packages if you are planning to build a kernel version similar to your current system's version: </p>
+        <code> sudo apt-get build-dep linux-image-$(uname -r) </code>.
+        <p> If you are using a version of Ubuntu that differs significantly from the kernel version you wish to build, then you should use a command similar to the following: </p>
+        <code> sudo apt-get build-dep linux-image-3.13.0-13-generic </code>,
+        <p> which corresponds to the Ubuntu Trusty version I am using as an example. </p>
+        
+        <h2> Step 3: Build the Plain Kernel! </h2>
+        <p> If this is your first time building and installing a kernel, you will want to familiarize yourself with the process before making any modifications to the source. Building the kernel is easy enough, but can take quite a while so make sure your computer will have time to run for some time. Change your terminal location to the root of the kernel source, <code> ubuntu-trusty </code>, and run the following commands:
+        <code> fakeroot debian/rules clean <br />, and 
+               fakeroot debian/rules binary-headers binary-generic 
+        </code>.
+        <p> The first command will clean the package tree and ready it for proper building. The second command will initialize the build process. This will take a while, and if the build is successful you will find at least 3 .deb binary package files in the directory outside the root of the kernel source. To check if the files exist, navigate up a level and list all files with a .deb extension: </p>
+        <code> cd ... <br />
+               ls *.deb <br />
+                    linux-headers <br />
+                    linux-headers <br />
+                    linux-image <br /> 
+        </code> 
+        <p> There may be a couple extra .deb files produced as well, which contain some additional features for the kernel. </p>            
+        
+        <h2> Install and Test the New Kernel </h2>
+        
+                    
+                    
+               
+               
     </body>
 </html>
