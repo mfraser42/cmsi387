@@ -24,7 +24,7 @@
                         <li> <code> git </code> </li>
                         <li> <code> make </code></li>
                         <li> <code> dpkg </code></li>
-                        <li> a text editor, such as gedit </li>
+                        <li> a text editor, such as <code> gedit </code></li>
                     </ul> 
                 </li>
                 <li> The following packages do not come with Ubuntu and need to be installed separately: 
@@ -41,8 +41,9 @@
                 <li> Root privileges </li>
             </ol>
             
+            
             <h2> Step 1: Get the Kernel Source </h2>
-            <p> Ubuntu sources to different Linux Kernels are maintained at ubuntu.kernel.org. 
+            <p> Ubuntu sources to different linux kernels are maintained at ubuntu.kernel.org. 
 			    In your terminal, move to a desired location into which you will download the kernel source. 
 			    Then run the following command, which is specific to Ubuntu Trusty (13.10): 
 		    </p>
@@ -54,6 +55,7 @@
 			    a directory called <code> ubuntu-trusty </code> will be created. You now have the kernel source! 
 		    </p>
             
+            
             <h2> Step 2: Setup the Build Environment</h2>
             <p> If you have not built a kernel on your current system previously, there are necessary packages to install 
 			    before the kernel can be built. If you have built a kernel on your system before, you can skip this step. 
@@ -61,6 +63,7 @@
 			    similar to your current system's version: 
 		    </p>
             <code> sudo apt-get build-dep linux-image-$(uname -r) </code>.
+            
             
             <h2> Step 3: Build the Plain Kernel! </h2>
             <p> If this is your first time building and installing a kernel, you will want to familiarize yourself with the 
@@ -76,7 +79,7 @@
 			    least 3 .deb binary package files in the directory outside the root of the kernel source. To check if 
 			    the files exist, navigate up a level and list all files with a .deb extension: 
 		    </p>
-            <code> cd ... <br />
+            <code> cd .. <br />
                    ls *.deb <br />
                         &nbsp;&nbsp;&nbsp;linux-headers-3.13.0-13_3.13.0-13.33_all.deb <br />
                         &nbsp;&nbsp;&nbsp;linux-headers-3.13.0-13-generic_3.13.0-13.33_i386.deb <br />
@@ -89,6 +92,7 @@
 			       &nbsp;&nbsp;&nbsp; linux-tools-3.13.0-13-generic_3.13.0-13.33_i386.deb
 		    </code>
             
+            
             <h2> Step 4: Install and Test the New Kernel </h2>
 		    <p> To install the new kernel from the .deb files, run the following command: </p>
             <code> sudo dpkg -i linux-*3.13.0-13*.deb </code>,
@@ -97,10 +101,13 @@
 			    To test the new kernel, reboot the computer, and it will start up with the new version!
 		    </p>
 		
-		    <h2> **Create Your Own System Call** </h2>
+		
+		    <h2> **Create Your Own System Call** </h2> <br />
 		    <p> Next we will be taking the source code that we downloaded in step 1
-			    and we will be modifying the source code to add our own system call!
+			    and we will be modifying it to add our own system call!
 		    </p>
+		    
+		    
 		    <h2> Step 5: Adding the New System Call to the System Call Table </h2>
 		    <p> To have our system call be recognized by the system, we need to modify
 			    the system call table and add our system call to it. The file we need 
@@ -108,11 +115,12 @@
 		    </p> 
 		    <code> ubuntu-trusty/arch/x86/syscalls/syscall_32.tbl </code> (for 32-bit kernels).
 		    <p> To this file, we need to append the following line: </p>
-		    <code> &nbsp;&nbsp;&nbsp;351 &nbsp;&nbsp;&nbsp;i386 &nbsp;&nbsp;&nbsp;
-			    sys_helloworld &nbsp;&nbsp;&nbsp;&nbsp;sys_helloworld </code>.
-		    <p> The number above, 351, may vary depending on your system. In should be 1 higher than
+		    <code> 351 &nbsp;&nbsp;&nbsp;i386 &nbsp;&nbsp;&nbsp; sys_helloworld &nbsp;&nbsp;&nbsp;&nbsp;sys_helloworld </code>.
+		    <p> The number above, 351, may vary depending on your system. It should be 1 higher than
 			    the max of the system call numbers in the file. 
 		    </p>
+		    
+		    
             <h2> Step 6: Adding the System Call to the Syscall Interface Header </h2>
 		    <p> Adding the new system call to this header allows multiple programs to utilize
 			    the new system call. The file to be modified is <code> include/linux/syscalls.h </code> 
@@ -121,15 +129,17 @@
 		    <code> asmlinkage long sys_helloworld(void) </code>.
 		    <p> The void <code> input </code> type allows the system to understand that the system call requires no inputs. </p>
                         
+                        
             <h2> Step 7: Adding the System Call to the Makefile </h2>  
 		    <p> Here we must modify the Makefile found in the root directory of the kernel source, and change one line from </p>
 		    <code> kernel/ mm/ fs/ ipc/ security/ crypto/ block/ </code> to <br />
 		    <code> kernel/ mm/ fs/ ipc/ security/ crypto/ block/ helloworld/ </code>.
 		
+		
 		    <h2> Step 8: Creating the Source File for the System Call </h2>
 		    <p> Now that the system knows of the system call, will attempt to compile the call during the build, and programs will
 			    have pointers to the system call once the new kernel is installed, we should actually write the system call. In the 
-			    home directory of the kernel source, create a folder called <code> helloworld </code>. Then create a file called
+			    home directory of the kernel source, create a folder called <code> helloworld </code>. Inside that directory create a file called
 			    <code> helloworld.c </code>, and copy the very basic version of the "Hello World" output to the kernel log file provided: 
 		    </p>
 		    <code> #include &#60;linux/kernel.h&#62; <br /> <br />
@@ -144,6 +154,7 @@
 			    add the following line: 
 		    </p>
 		    <code> obj-y := helloworld.o </code>.
+                   
                    
             <h2> Step 9: Build, Install, and Test the New System Call </h2>
             <p> Repeat steps 3 and 4 to rebuild and test the Kernel. To test the system call, create the file <code> helloworld.c </code> and 
@@ -167,6 +178,7 @@
             </code>
             <p> Compile the file and run the produced executable. The program should return a 0, and should print the message "Hello, World" to the kernel log,
                 which can be viewed by running the <code> dmesg </code> command.
+                
                 
             <h2> Celebrate! </h2>
             <p> You've now accomplished one of the <strike> most annoying</strike> most fun tasks of operating systems! </p>
