@@ -1,5 +1,5 @@
 code {
-	color: purple;
+	color: green;
 	font-weight: bold;
 }
 
@@ -8,9 +8,17 @@ h2 {
 }
 
 body {
-    margin-left: 170px;
-    margin-right: 170px;
+    background-color: #F78181;
+}
+
+#cdiv {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
     margin-top: 0px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    padding: 20px;
+    border-style: solid;
+    border-width: 5px;
+    background-color: #D0A9F5;
 }
