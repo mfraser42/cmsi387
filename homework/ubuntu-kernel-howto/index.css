@@ -1,0 +1,16 @@
+code {
+	color: purple;
+	font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    margin-left: 170px;
+    margin-right: 170px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}

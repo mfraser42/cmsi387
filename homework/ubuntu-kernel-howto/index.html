@@ -17,59 +17,163 @@
         
         <h2> Prerequisites </h2>
         <ol>
-            <li> Computer or virtual machine running Ubuntu (any still-relative version). </li>
+            <li> Computer or virtual machine running a version of Ubuntu similar to the version you wish to build. </li>
             <li> The following packages should be present with your version of Ubuntu:
-                <ol> 
+                <ul> 
                     <li> git </li>
                     <li> make </li>
                     <li> dpkg </li>
                     <li> a text editor, such as gedit </li>
-                </ol> 
+                </ul> 
             </li>
             <li> The following packages do not come with Ubuntu and need to be installed separately: 
-                <ol> 
+                <ul> 
+					<li> fakeroot </li>
+					<li> build-essential </li>
+					<li> devscripts </li>
+					<li> libncurses5 </li>
+					<li> libncurses5-dev </li>
                     <li> kernel-package </li>
-                    <li> fakeroot </li>
-                    <li> libncurses5-dev </li>
-                </ol> 
+                </ul> 
             </li>
             <li> A connection to the internet </li>
             <li> Root privileges </li>
         </ol>
         
         <h2> Step 1: Get the Kernel Source </h2>
-        <p>Ubuntu sources to different Linux Kernels are maintained at ubuntu.kernel.org. In your terminal, move to a desired location into which you will download the kernel source. Then run the following command, which is specific to Ubuntu Trusty (13.10): </p>
+        <p> Ubuntu sources to different Linux Kernels are maintained at ubuntu.kernel.org. 
+			In your terminal, move to a desired location into which you will download the kernel source. 
+			Then run the following command, which is specific to Ubuntu Trusty (13.10): 
+		</p>
         <code> git clone git://kernel.ubuntu.com/ubuntu/ubuntu-trusty.git </code>.
         <p> The same command can be altered for different versions of Ubuntu in the following manner: </p>
         <code> git clone git://kernel.ubuntu.com/ubuntu/ubuntu-&#60;version&#62;.git </code>,
-        <p> where <code>&#60;version&#62;</code> is the name of the desired ubuntu version, such as trusty, oneiric, etc. This source will be downloaded into a directory according to the name of the Ubuntu version, and in the case of Ubuntu Trusty, a directory called <code> ubuntu-trusty </code> will be created. You now have the kernel source! </p>
+        <p> where <code>&#60;version&#62;</code> is the name of the desired ubuntu version, such as trusty, oneiric, etc. 
+			This source will be downloaded into a directory according to the name of the Ubuntu version, and in the case of Ubuntu Trusty, 
+			a directory called <code> ubuntu-trusty </code> will be created. You now have the kernel source! 
+		</p>
         
         <h2> Step 2: Setup the Build Environment</h2>
-        <p> If you have not built a kernel on your current system previously, there are necessary packages to install before the kernel can be built. If you have built a kernel on your system before, you can skip this step. Running the following code will install the dependent packages if you are planning to build a kernel version similar to your current system's version: </p>
+        <p> If you have not built a kernel on your current system previously, there are necessary packages to install 
+			before the kernel can be built. If you have built a kernel on your system before, you can skip this step. 
+			Running the following code will install the dependent packages if you are planning to build a kernel version 
+			similar to your current system's version: 
+		</p>
         <code> sudo apt-get build-dep linux-image-$(uname -r) </code>.
-        <p> If you are using a version of Ubuntu that differs significantly from the kernel version you wish to build, then you should use a command similar to the following: </p>
-        <code> sudo apt-get build-dep linux-image-3.13.0-13-generic </code>,
-        <p> which corresponds to the Ubuntu Trusty version I am using as an example. </p>
         
         <h2> Step 3: Build the Plain Kernel! </h2>
-        <p> If this is your first time building and installing a kernel, you will want to familiarize yourself with the process before making any modifications to the source. Building the kernel is easy enough, but can take quite a while so make sure your computer will have time to run for some time. Change your terminal location to the root of the kernel source, <code> ubuntu-trusty </code>, and run the following commands:
-        <code> fakeroot debian/rules clean <br />, and 
+        <p> If this is your first time building and installing a kernel, you will want to familiarize yourself with the 
+			process before making any modifications to the source. Building the kernel is easy enough, but can 
+			take quite a while so make sure your computer will have time to run uninterrupted. Change your terminal 
+			location to the root of the kernel source, <code> ubuntu-trusty </code>, and run the following commands: 
+		</p>
+        <code> fakeroot debian/rules clean, and <br />
                fakeroot debian/rules binary-headers binary-generic 
         </code>.
-        <p> The first command will clean the package tree and ready it for proper building. The second command will initialize the build process. This will take a while, and if the build is successful you will find at least 3 .deb binary package files in the directory outside the root of the kernel source. To check if the files exist, navigate up a level and list all files with a .deb extension: </p>
+        <p> The first command will clean the package tree and ready it for proper building. The second command will 
+			initialize the build process. This will take a while, and if the build is successful you will find at 
+			least 3 .deb binary package files in the directory outside the root of the kernel source. To check if 
+			the files exist, navigate up a level and list all files with a .deb extension: 
+		</p>
         <code> cd ... <br />
                ls *.deb <br />
-                    linux-headers <br />
-                    linux-headers <br />
-                    linux-image <br /> 
+                    &nbsp;&nbsp;&nbsp;linux-headers-3.13.0-13_3.13.0-13.33_all.deb <br />
+                    &nbsp;&nbsp;&nbsp;linux-headers-3.13.0-13-generic_3.13.0-13.33_i386.deb <br />
+                    &nbsp;&nbsp;&nbsp;linux-image-3.13.0-13-generic_3.13.0-13.33_i386.deb <br /> 
         </code> 
-        <p> There may be a couple extra .deb files produced as well, which contain some additional features for the kernel. </p>            
+        <p> There may be a couple extra .deb files produced as well, which contain some additional features for the kernel.
+			The extra .deb files that were produced in this example were:
+		</p>            
+		<code> &nbsp;&nbsp;&nbsp; linux-image-extra-3.13.0-13-generic_3.13.0-13.33_i386.deb<br />
+			   &nbsp;&nbsp;&nbsp; linux-tools-3.13.0-13-generic_3.13.0-13.33_i386.deb
+		</code>
         
-        <h2> Install and Test the New Kernel </h2>
-        
+        <h2> Step 4: Install and Test the New Kernel </h2>
+		<p> To install the new kernel from the .deb files, run the following command: </p>
+        <code> sudo dpkg -i linux-*3.13.0-13*.deb </code>,
+		<p> which specifically targets .deb files corresponding to the version that was just built. This process takes a short while,
+			but nowhere nearly as long as the build process did (should complete in under 10 minutes, but it depends on your system).
+			To test the new kernel, reboot the computer, and it will start up with the new version!
+		</p>
+		
+		<h2> **Create Your Own System Call** </h2>
+		<p> Next we will be taking the source code that we downloaded in step 1
+			and we will be modifying the source code to add our own system call!
+		</p>
+		<h2> Step 5: Adding the New System Call to the System Call Table </h2>
+		<p> To have our system call be recognized by the system, we need to modify
+			the system call table and add our system call to it. The file we need 
+			to modify is 
+		</p> 
+		<code class="codeclass"> ubuntu-trusty/arch/x86/syscalls/syscall_32.tbl </code> (for 32-bit kernels).
+		<p> To this file, we need to append the following line: </p>
+		<code> &nbsp;&nbsp;&nbsp;351 &nbsp;&nbsp;&nbsp;i386 &nbsp;&nbsp;&nbsp;
+			sys_helloworld &nbsp;&nbsp;&nbsp;&nbsp;sys_helloworld </code>.
+		<p> The number above, 351, may vary depending on your system. In should be 1 higher than
+			the max of the system call numbers in the file. 
+		</p>
+        <h2> Step 6: Adding the System Call to the Syscall Interface Header </h2>
+		<p> Adding the new system call to this header allows multiple programs to utilize
+			the new system call. The file to be modified is <code> include/linux/syscalls.h </code> 
+			To this file, we must append the following line:
+		</p>
+		<code> asmlinkage long sys_helloworld(void) </code>.
+		<p> The void <code> input </code> type allows the system to understand that the system call requires no inputs. </p>
                     
-                    
+        <h2> Step 7: Adding the System Call to the Makefile </h2>  
+		<p> Here we must modify the Makefile found in the root directory of the kernel source, and change one line from </p>
+		<code> kernel/ mm/ fs/ ipc/ security/ crypto/ block/ </code> to
+		<code> kernel/ mm/ fs/ ipc/ security/ crypto/ block/ helloworld/ </code>.
+		
+		<h2> Step 8: Creating the Source File for the System Call </h2>
+		<p> Now that the system knows of the system call, will attempt to compile the call during the build, and programs will
+			have pointers to the system call once the new kernel is installed, we should actually write the system call. In the 
+			home directory of the kernel source, create a folder called <code> helloworld </code>. Then create a file called
+			<code> helloworld.c </code>, and copy the very basic version of the "Hello World" output to the kernel log file provided: 
+		</p>
+		<code> #include <linux/kernel.h> <br /> <br />
+			
+			asmlinkage long sys_helloworld(void) { <br /> 
+				
+				&nbsp;&nbsp;&nbsp; printk("Hello world.\n"); <br />
+				&nbsp;&nbsp;&nbsp; return 0; <br />
+			}
+		</code>
+		<p> To ensure this basic system call is compiled, create a makefile in that same <code> helloworld </code> directory, and 
+			add the following line: 
+		</p>
+		<code> obj-y := helloworld.o </code>.
                
+        <h2> Step 9: Build, Install, and Test the New System Call </h2>
+        <p> Repeat steps 3 and 4 to rebuild and test the Kernel. To test the system call, create the file <code> helloworld.c </code> and 
+            copy the following function into it: 
+        </p>
+        <code>  
+            #include &#60;stdio.h&#62; <br />
+            #include &#60;linux/kernel.h&#62; <br />
+            #include &#60;sys/syscall.h&#62; <br />
+            #include &#60;unistd.h&#62;  <br /> <br />
+
+            long helloworld_syscall(void) {<br />
+            &nbsp;&nbsp;&nbsp;return syscall(351);<br />
+            }<br /><br />
+
+            int main(int argc, char *argv[]) {<br />
+            &nbsp;&nbsp;&nbsp;long int a = helloworld_syscall();<br />
+            &nbsp;&nbsp;&nbsp;printf("System call returned %ld\n", a);<br />
+            &nbsp;&nbsp;&nbsp;return 0;<br />
+            }
+        </code>
+        <p> Compile the file and run the produced executable. The program should return a 0, and should print the message "Hello, World" to the kernel log,
+            which can be viewed by running the <code> dmesg </code> command.
+            
+        <h2> Celebrate! </h2>
+        <p> You've now accomplished one of the <strike> most annoying</strike> most fun tasks of operating systems! </p>
                
     </body>
 </html>
+
+
+
+
+
