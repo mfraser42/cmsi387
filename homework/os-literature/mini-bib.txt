@@ -37,13 +37,20 @@ This article directly responds to that which was presented in Article 1. Much of
 The author of this article expands on the information of the first article, saying Gingra's (author of the first article) solution to the dining philosopher problem is flawed in a couple ways. The first issue is with the line used by Gingra's in his solution, where the author says multiple philosophers should be allowed to eat at the table and be removed from the line instead of just assuming only one philospher can make it to the table. The author then shows this concept implemented in Concurrent Euclid to match the previous article's code. 
 
 The author also mentions that Gingra's solution does not meet maximal efficiency as was proclaimed, and discusses how maximal efficiency and starvation actually contradict each other. The maximal efficiency may be when the same set of philosophers continue to eat and exclude a philosopher from ever getting to eat. 
+
+Lastly, the author then expands the solution to work with most general cases of mutual exclusion problems.
  
 3) The Quality:
-The article seemed to maintain the quality level from the first article, and progressed nicely. This article included an abstract, introduction of the problem, and the previous solution. It then went on in detail to discuss the differences of the new proposed solution with the previous solution. 
+The article seemed to maintain the quality level from the first article, and progressed nicely. This article included an abstract, introduction of the problem, and the previous solution. It then went on in detail to discuss the differences of the new proposed solution with the previous solution, and concluded the article nicely.
  
  ----- Article 3 -----
 1) The Connection:
+The title is Process Synchonization and IPC. Process synchronization, which is what Dijkstra spoke about in his Cooperating Sequential Processes. The author summarizes many different methods or process synchronization.
  
 2) What's Different:
- 
+The author discusses methods of process synchronization beyond what Dijksta spoke of, such as hardward solutions. The one I found interesting was the solution of deactivating cpu switches when a process enters a critical section, preventing other processes becoming active and thus preventing them from getting to the critical section. This does cause all the other processes to hang until the one in the critical section finishes though, which would be inefficient and is more an avoidance of synchronization rather than synchronization. 
+
+The author also discusses IPC, interprocess communication, and from the title I assumed IPC would be used for process synchronization. This is not the case in this article it seems, sadly, as this article merely summarizes the two concepts separately and concludes that combining the two concepts is being done elsewhere.
+
 3) The Quality:
+The author does not seem to bring anything unique to the subject area, all the information seems to be brought in from other sources and this article just summarizes that information. Its written well for a summary, but otherwise I was disappointed. I did assume it would delve into a concept of interest rather though, so my expectations were higher going in. 
