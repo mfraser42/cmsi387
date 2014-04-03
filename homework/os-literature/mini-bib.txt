@@ -13,6 +13,18 @@ The articles being annotated/discussed:
 2) Dining Philosphers Revisted, Again, by Kwok-Bun Yue
 3) Process Synchronization and IPC, by Craig E. Wills
 
+ ----- Article 1 -----
+1) The Connection:
+This article discusses Dijkstra's solution to the dining philosophers problem along with other solutions presented after him. It also discusses the vocabulary of the problem, lists common assumptions, and presents the problem in several ways. The author then presents a solution that is to be answer the dining philosphers problem than that of the previously discussed solutions. 
 
+2) Whats Different:
+The author introduces a mechanism called the monitor, and implements such mechanism in a programming language known as Concurrent Euclid. This monitor "is a module that enforces mutually exclusive use of its procedures and data by processes requiring coordination. It manages condition queues wherein delayed processes may wait." This monitor seems to be the controlling agent, which would allow or prevent the philosophers from eating based on the states of the other philosophers. 
 
+A different approach to the problem is explored with the concept of philosophers being "lefties" or "righties." A "lefty" would always look to pick up the left fork first, whereas a "righty" would always look to pick up the right fork first. The author presents theorems based on the inclusion of at least one "lefty" and at least one "righty" philosopher being a part of the problem. Proofs following these theorems show that the case of involving a lefty and righty in the problem prevents starvation and deadlock.
 
+The author then proposes a solution that focuses around the activities of the philosophers themselves rather than the forks. It uses a line mechanism that a philosopher would enter the end of. Once in line, a monitor would take the longest waiting philosopher and check him/her against the eating philosphers to see if a neighbor is eating. If a neighbor is eating, then a different philospher would be considered from the line. If no neighbor is eating, then that philospher could then go and eat when a slot is made available. This solution seems to alter the problem to me, as now it seems the philosophers are allowed to switch table positions with one another. However, the concept of checking if a neighbor is already eating would make this point an unncessary concern, as it can be viewed that the philosophers original seat is inbetween the two empty neighbor seats. 
+
+3) The Quality:
+Besides the code in Concurrent Euclid being a bit of a challenge to read, I thought the progression of the article was well done. It started with the problem statement, went through definitions, assumptions, and other solutions, and then presented a final solution. ACM did cut off the solution verification and works cited, but that's not the author's fault. 
+
+It was published at the Metropolitan State College in Denver, Colorado. I have not heard of this author or the college, but from this paper I'd say both are capable when it comes to discussing the dining philosophers problem. 
