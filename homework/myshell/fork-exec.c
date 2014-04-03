@@ -69,7 +69,7 @@ int main() {
 				command[strlen(command) - 1] = '\0';
 				background = 1;
 
-				/* Get rid of annoying extra spaces. */
+				/* Get rid of annoying extra spaces, in the event of "command arg        &" */
 				while (command[strlen(command) - 1] == ' ') {
 					command[strlen(command) - 1] = '\0';
 				}
@@ -101,7 +101,7 @@ int main() {
 
 				} else if (pid == 0) {
 
-					/* Child process. */
+					/* Child process. Take argument from array and store remaining arguments back into arguments*/
 					execvp(arguments[0], arguments);
 
 				} else {

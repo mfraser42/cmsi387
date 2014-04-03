@@ -1,0 +1,13 @@
+Points to Ponder with My Shell.
+Written by Michael Fraser
+
+1) Why did the cd command get special mention in this assignment?
+    The commands we run are child processes, and the cd command is trying to change the parent process, the shell. This is why the cd command requires special mention, as child processes do not easily change the parent process. 
+
+2) Can your shell run scripts? Why or why not?
+    Yes, but the output is odd. The prompt waits until the very end to display itself for every command that was ran in the script. The way my shell tokenizes the plural commands allows it to take each command piece by piece. 
+    
+    Something that may be happening is that the getcwd command continues to append the current directory to the cwd variable, but I would still expect to see the directory listed before the first command is run. 
+
+3) Does Ctrl-D exit your shell? Why or why not?
+    Yes, because Ctrl-D signals that there is no more file input and the while loop that keeps the shell running is based around input still existing. 

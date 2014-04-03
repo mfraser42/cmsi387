@@ -1,7 +1,7 @@
 CSI-Process Assignment
 Written by Michael Fraser
 
-Chelsea and I traded computers (Linux for Mac, Mac for Linux) during this assignment. Both our names are present in the terminals of the corresponding computer for this reason. 
+Used Chelsea's computer for the Mac, so her name shows up in the terminal prompt. 
 
 
 Linux ( Linux Mint )
@@ -16,6 +16,11 @@ Mac
 *** Using sum.java ***
 mac-background-and-threads.png: 
 
-1) After invoking "java Sum 1000 2000 1500" it was possible to run the activity monitor and observe the number of threads associated with the process "java." It was found to be running 23 threads. 
+1-2) After invoking "java Sum 1000 2000 1500" it was possible to run the activity monitor and observe the number of threads associated with the process "java." It was found to be running 23 threads. 
+
+It is cutoff by the picture, unfortunately, that the command I ran with the Mac is not shown. I ran the command ls -i, just as I did for linux, and received a similar output amongst the mess of output from the sum.java process. This would have illustrated the "running a process in the background" portion of the assignment.
+
+** Comparison **
+The Mac displays the threads in the Activity Monitor, whereas Linux does not. The nlwp portion of the linux command seems to identify threads as "light weight" proceses, which would imply threads are like small or simple processes. 
 
 

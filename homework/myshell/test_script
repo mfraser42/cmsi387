@@ -1,0 +1,6 @@
+cd ../../.. 
+ls 
+cd CMSI387/homework/myshell/ 
+ls ../../.. 
+echo SCIENCE! 
+pwd 
