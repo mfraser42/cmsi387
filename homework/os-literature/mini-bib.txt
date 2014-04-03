@@ -25,6 +25,25 @@ A different approach to the problem is explored with the concept of philosophers
 The author then proposes a solution that focuses around the activities of the philosophers themselves rather than the forks. It uses a line mechanism that a philosopher would enter the end of. Once in line, a monitor would take the longest waiting philosopher and check him/her against the eating philosphers to see if a neighbor is eating. If a neighbor is eating, then a different philospher would be considered from the line. If no neighbor is eating, then that philospher could then go and eat when a slot is made available. This solution seems to alter the problem to me, as now it seems the philosophers are allowed to switch table positions with one another. However, the concept of checking if a neighbor is already eating would make this point an unncessary concern, as it can be viewed that the philosophers original seat is inbetween the two empty neighbor seats. 
 
 3) The Quality:
-Besides the code in Concurrent Euclid being a bit of a challenge to read, I thought the progression of the article was well done. It started with the problem statement, went through definitions, assumptions, and other solutions, and then presented a final solution. ACM did cut off the solution verification and works cited, but that's not the author's fault. 
+Besides the code in Concurrent Euclid being a bit of a challenge to read, I thought the progression of the article was well done. It started with the problem statement, went through definitions, assumptions, and other solutions, and then presented a final solution. ACM did cut off the solution verification and works cited, but that's not the author's fault. There is no abstract though, and that seems to be more and more necessary for formal papers. 
 
 It was published at the Metropolitan State College in Denver, Colorado. I have not heard of this author or the college, but from this paper I'd say both are capable when it comes to discussing the dining philosophers problem. 
+
+ ----- Article 2 -----
+1) The Connection:
+This article directly responds to that which was presented in Article 1. Much of the code and topics of the first article is presented and discussed in this article. 
+
+2) What's Different:
+The author of this article expands on the information of the first article, saying Gingra's (author of the first article) solution to the dining philosopher problem is flawed in a couple ways. The first issue is with the line used by Gingra's in his solution, where the author says multiple philosophers should be allowed to eat at the table and be removed from the line instead of just assuming only one philospher can make it to the table. The author then shows this concept implemented in Concurrent Euclid to match the previous article's code. 
+
+The author also mentions that Gingra's solution does not meet maximal efficiency as was proclaimed, and discusses how maximal efficiency and starvation actually contradict each other. The maximal efficiency may be when the same set of philosophers continue to eat and exclude a philosopher from ever getting to eat. 
+ 
+3) The Quality:
+The article seemed to maintain the quality level from the first article, and progressed nicely. This article included an abstract, introduction of the problem, and the previous solution. It then went on in detail to discuss the differences of the new proposed solution with the previous solution. 
+ 
+ ----- Article 3 -----
+1) The Connection:
+ 
+2) What's Different:
+ 
+3) The Quality:
