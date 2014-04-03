@@ -1,0 +1,18 @@
+Mini-Annotated Bibliography
+Written by Michael Fraser
+
+The questions for each article:    
+1) State its connection to the other work in our small collection—the connection must be explicit (i.e., cited and overtly discussed in the text). Connections may be to the other work that you find, but at least one must point to something given out in class. 
+   
+2) State what it does new or differently from the prior cited works. 
+    
+3) Give a brief assessment of the quality of the work. Consider the authors, the publication venue, the level of detail, references cited, etc.
+
+The articles being annotated/discussed:
+1) Dining Philosophers Revisited, by Armando R. Gingras
+2) Dining Philosphers Revisted, Again, by Kwok-Bun Yue
+3) Process Synchronization and IPC, by Craig E. Wills
+
+
+
+
