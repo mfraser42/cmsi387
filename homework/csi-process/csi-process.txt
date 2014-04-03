@@ -1,0 +1,21 @@
+CSI-Process Assignment
+Written by Michael Fraser
+
+Chelsea and I traded computers (Linux for Mac, Mac for Linux) during this assignment. Both our names are present in the terminals of the corresponding computer for this reason. 
+
+
+Linux ( Linux Mint )
+*** Using sum.c ***
+
+1) linux-background.png: After invoking sum 2000 1000 3000 &, which caused the sum program to run in the background, I ran ls -i, which is hard to see in the mass of numbers. The output can be seen at the bottom of the picture, with the files and their corresponding inode numbers listed horizontally. 
+
+2) linux-threads.png: After invoking "sum 1000 1000", and using Ctrl+Z to stop the program, I ran "ps -a" to list show the process running and to get the process ID number: 6204. The command ps -o nlwp 6204 shows the number of light weight processes. The result was 3, indicating 3 running threads. 
+
+
+Mac
+*** Using sum.java ***
+mac-background-and-threads.png: 
+
+1) After invoking "java Sum 1000 2000 1500" it was possible to run the activity monitor and observe the number of threads associated with the process "java." It was found to be running 23 threads. 
+
+
