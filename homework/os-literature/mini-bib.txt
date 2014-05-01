@@ -19,7 +19,7 @@ The articles being annotated/discussed:
 
  ----- Article 1 -----
 1) The Connection:
-This article discusses Dijkstra's solution to the dining philosophers problem along with other solutions presented after him. It also discusses the vocabulary of the problem, lists common assumptions, and presents the problem in several ways. The author then presents a solution that is to be answer the dining philosphers problem than that of the previously discussed solutions. 
+This article discusses Dijkstra's solution to the dining philosophers problem along with other solutions presented after him. It also discusses the vocabulary of the problem, lists common assumptions, and presents the problem in several ways. The author then presents a solution that is to answer the dining philosphers problem than that of the previously discussed solutions. 
 # JD: ^^^^^^^^^^^^^ Another typo.  You must have been typing faaaaast :)
 
 2) Whats Different:
@@ -55,7 +55,7 @@ The title is Process Synchonization and IPC. Process synchronization, which is w
 # JD: Should I...?  Nah nevermind.
 
 2) What's Different:
-The author discusses methods of process synchronization beyond what Dijksta spoke of, such as hardward solutions. The one I found interesting was the solution of deactivating cpu switches when a process enters a critical section, preventing other processes becoming active and thus preventing them from getting to the critical section. This does cause all the other processes to hang until the one in the critical section finishes though, which would be inefficient and is more an avoidance of synchronization rather than synchronization. 
+The author discusses methods of process synchronization beyond what Dijksta spoke of, such as hardware solutions. The one I found interesting was the solution of deactivating cpu switches when a process enters a critical section, preventing other processes becoming active and thus preventing them from getting to the critical section. This does cause all the other processes to hang until the one in the critical section finishes though, which would be inefficient and is more an avoidance of synchronization rather than synchronization. 
 # JD: And a few more for good measure.  "hardward" actually sounds somewhat humorous.
 
 The author also discusses IPC, interprocess communication, and from the title I assumed IPC would be used for process synchronization. This is not the case in this article it seems, sadly, as this article merely summarizes the two concepts separately and concludes that combining the two concepts is being done elsewhere.
