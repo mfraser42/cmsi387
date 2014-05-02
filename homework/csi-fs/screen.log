@@ -1,0 +1,81 @@
+Script started on Thu 01 May 2014 09:12:34 PM PDT
+michael@CrimsonMint ~ $ dd if=/dev/zero of=image42 count=1024
+1024+0 records in
+1024+0 records out
+524288 bytes (524 kB) copied, 0.00627856 s, 83.5 MB/s
+michael@CrimsonMint ~ $ mke2fs image42
+mke2fs 1.42.5 (29-Jul-2012)
+image42 is not a block special device.
+Proceed anyway? (y,n) y
+Discarding device blocks: done                            
+Filesystem label=
+OS type: Linux
+Block size=1024 (log=0)
+Fragment size=1024 (log=0)
+Stride=0 blocks, Stripe width=0 blocks
+64 inodes, 512 blocks
+25 blocks (4.88%) reserved for the super user
+First data block=1
+Maximum filesystem blocks=524288
+1 block group
+8192 blocks per group, 8192 fragments per group
+64 inodes per group
+
+Allocating group tables: 0/1 done                            
+Writing inode tables: 0/1 done                            
+Writing superblocks and filesystem accounting information: 0/1 done
+
+michael@CrimsonMint ~ $ mkdir mount42
+michael@CrimsonMint ~ $ sudo mount -o loop -o nosuid -o nodev image42 mount42/
+[sudo] password for michael: 
+michael@CrimsonMint ~ $ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/sda7       80105304 54692380  21337148  72% /
+none                   4        0         4   0% /sys/fs/cgroup
+udev             2968368        4   2968364   1% /dev
+tmpfs             597120     1976    595144   1% /run
+none                5120        0      5120   0% /run/lock
+none             2985596      640   2984956   1% /run/shm
+none              102400       28    102372   1% /run/user
+/dev/loop0           499       15       459   4% /home/michael/mount42
+michael@CrimsonMint ~ $ umount mount42/
+umount: /home/michael/mount42 is not in the fstab (and you are not root)
+michael@CrimsonMint ~ sudo umount mount42/
+michael@CrimsonMint ~ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/sda7       80105304 54692416  21337112  72% /
+none                   4        0         4   0% /sys/fs/cgroup
+udev             2968368        4   2968364   1% /dev
+tmpfs             597120     1976    595144   1% /run
+none                5120        0      5120   0% /run/lock
+none             2985596      648   2984948   1% /run/shm
+none              102400       28    102372   1% /run/user
+michael@CrimsonMint ~ $ sudo mount -o loop -o nosuid -o nodev image42 mount42/
+michael@CrimsonMint ~ $ cd mount42/
+michael@CrimsonMint ~/mount42 $ ls
+lost+found
+michael@CrimsonMint ~/mount42 $ echo "well when you put it that way.." >> nonEmpty.txt
+michael@CrimsonMint ~/mount42 $ ls
+lost+found  nonEmpty.txt
+michael@CrimsonMint ~/mount42 $ cdmkdir topLevelStuff
+michael@CrimsonMint ~/mount42 $ cd topLevelStuff/
+michael@CrimsonMint ~/mount42/topLevelStuff $ echo "let it go... let it go..." >> nonsense.txt
+michael@CrimsonMint ~/mount42/topLevelStuff $ ln -s ../nonEmpty.txt softie
+michael@CrimsonMint ~/mount42/topLevelStuff $ ln nonsense.txt ../hardie
+michael@CrimsonMint ~/mount42/topLevelStuff $ ls
+nonsense.txt  softie
+michael@CrimsonMint ~/mount42/topLevelStuff $ ls-i
+ls-i: command not found
+michael@CrimsonMint ~/mount42/topLevelStuff $ ls -i
+14 nonsense.txt  15 softie
+michael@CrimsonMint ~/mount42/topLevelStuff $ cd ..
+michael@CrimsonMint ~/mount42 $ ls -F
+hardie  lost+found/  nonEmpty.txt  topLevelStuff/
+michael@CrimsonMint ~/mount42 $ ls -a
+.  ..  hardie  lost+found  nonEmpty.txt  topLevelStuff
+michael@CrimsonMint ~/mount42 $ cd ..
+michael@CrimsonMint ~ $ umount sudo umount mount42/
+michael@CrimsonMint ~ $ exit
+exit
+
+Script done on Thu 01 May 2014 09:20:14 PM PDT
