@@ -11,6 +11,8 @@ Linux ( Linux Mint )
 
 2) linux-threads.png: After invoking "sum 1000 1000", and using Ctrl+Z to stop the program, I ran "ps -a" to list show the process running and to get the process ID number: 6204. The command ps -o nlwp 6204 shows the number of light weight processes. The result was 3, indicating 3 running threads. 
 
+# JD: A step in the right direction, but another ps option would have given
+#     you even more information.
 
 Mac
 *** Using sum.java ***
@@ -21,6 +23,7 @@ mac-background-and-threads.png:
 It is cutoff by the picture, unfortunately, that the command I ran with the Mac is not shown. I ran the command ls -i, just as I did for linux, and received a similar output amongst the mess of output from the sum.java process. This would have illustrated the "running a process in the background" portion of the assignment.
 
 ** Comparison **
-The Mac displays the threads in the Activity Monitor, whereas Linux does not. The nlwp portion of the linux command seems to identify threads as "light weight" proceses, which would imply threads are like small or simple processes. 
+The Mac displays the threads in the Activity Monitor, whereas Linux does not. The nlwp portion of the linux command seems to identify threads as "light weight" processes, which would imply threads are like small or simple processes. 
 
-
+# JD: Very nice speculation there on those lightweight processes.  That mystery ps option
+#     would have told you a lot about whether that speculation is accurate.

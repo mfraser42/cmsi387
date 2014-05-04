@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 
+// JD: Good idea, these macros.
 #define MAX_TKNS 15
 #define MAX_COMMAND_LENGTH 100
 #define MAX_DIRECTORY_LENGTH 512
@@ -13,6 +14,7 @@
 * commands in an array. Command goes in as a string and is separated 
 * into different arguments.
 */
+// JD: Nicely separated.
 int tokenize_input_commands (char* command, char* arguments[]) {
     int index = 0;
     char* deliminate = " \n"; // split based on new line and spaces
