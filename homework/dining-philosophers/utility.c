@@ -11,3 +11,10 @@ int randomwait(int bound) {
     sleep(wait);
     return wait;
 }
+
+/**
+* Used to print representations of the philosopher's different states.
+*/
+void printPhilosophers () {
+
+}
