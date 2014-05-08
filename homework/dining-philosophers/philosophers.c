@@ -10,28 +10,44 @@
 #include <stdio.h>
 #include <semaphore.h>
 
+#define THINKING 0
+#define HUNGRY 1
+#define EATING 2
+
+#define MAX_PHILOSOPHERS 10
+
+struct table_info {
+    int phil_id[MAX_PHILOSOPHERS];
+    int phil_status[MAX_PHILOSOPHERS];
+    pthread_mutex_t chopsticks[MAX_PHILOSOPHERS];
+    int chopstick_status[MAX_PHILOSOPHERS];
+} t_info;
+
 int main(int argc, char** argv) {
-    int number_philosophers;
+    int number_phils;
     
     //remember to atoi, check for # phils > 2
     if (argc < 2) {
-        number_philosophers = 5;
+        number_phils = 5;
     } else {
-        number_philosophers = argv[1];
+        number_phils = argv[1];
     }
     printf("Dining Philosophers Simulation Initialized.\n");    
     
     // define threads for philosophers
-    pthread_t philosophers[number_philosophers];
-    // create array used to identify which philosophers is being interacted with
-    int philosopher_id[number_philosophers];
-    // array to hold the state of the philosophers
-    int philosopher_state[number_philosophers];
-    //array to determine the state of a chopstick
-    int chopstick_state[number_philsophers];
-    // create mutex for each chopstick
-    pthread_mutex_t chopsticks[number_philosophers];
+    pthread_t phils[number_phils];
+
+    // create mutex for each chophilstick
     
+    
+    struct table_info t_info = {0};
+    
+    int i;
+    for (i = 0; i < number_phils; i++) {
+        t_info.phil_id[i] = i;
+        pthread_mutex_init(&t_info.chopsticks[i], NULL);
+     //   pthread_create(&philosophers[i], NULL, transition, &philosopher_number[i]);
+    }
     
     
     return 0;
