@@ -14,12 +14,14 @@ void setPageTable(pagetable *pt) {
 
 int getPhysical(int logical) {
     // check if the logical page value exists
+    // JD: Max check could have been unhardcoded via the #define's.
     if ( logical < 0 || logical >= 256 ) {
         return ERR_OUT_OF_RANGE;
     }
     
     // get bits corresponding to the page
     int page = (( logical & PAGEMASK) >> PAGEBITS);
+    // JD: Because you are right-shifting, note you don't need the & :)
     // get bits corresponding to the offset
     int offset = (logical & PAGESIZE);
     
