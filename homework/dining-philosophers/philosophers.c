@@ -8,6 +8,24 @@
 
 #include "tableStuff.h"
 
+void* transitioning(void* philosopher) {
+    int id = *(int*) philosopher;
+
+    while (1) {
+        visualRepresentation();        
+        if (t_info.phil_status[id] == THINKING) {
+            ponderUniverse(id);
+        } else if (t_info.phil_status[id] == HUNGRY) {
+            eat(id);
+        } else if (t_info.phil_status[id] == EATING) {
+            stopEating(id);
+        }
+    
+    }
+
+}
+
+
 int main(int argc, char** argv) {
     
     //remember to atoi, check for # phils > 2

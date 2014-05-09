@@ -1,8 +1,8 @@
 /**
  * Synchronization elements for a bounded buffer solution.
  */
-#ifndef __BB_SYNC__
-#define __BB_SYNC__
+#ifndef __TABLESTUFF__
+#define __TABLESTUFF__
 
 #define THINKING 0
 #define HUNGRY 1
@@ -24,8 +24,9 @@ struct table_info {
 
 int randomwait(int bound);
 
-void ponder_universe(int philosopher_id);
-void eat(int philosopher_id);
+void ponderUniverse(int id);
+void eat(int id);
+void stopEating(int id);
 void* transitioning(void* philosopher);
 
 #endif
