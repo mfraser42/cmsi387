@@ -3,6 +3,8 @@
 *   5-8-2014
 */
 
+#include "tableStuff.h"
+
 void ponder_universe(int philosopher_id) {
 }
 

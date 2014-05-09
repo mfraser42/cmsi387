@@ -3,6 +3,8 @@
 *   5-8-2014
 */
 
+#include "tableStuff.h"
+
 /**
 * Allows for the picking up of a chopstick.
 */
