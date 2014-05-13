@@ -24,7 +24,7 @@
 00001810  5d 1b 63 53 00 00 00 00  00 00 00 00 00 00 00 00  |].cS............|
 00001820  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 
-#second inode at 1880. represents root directory, mode is 41 ed which state its read, write, execute privledges and declare it a directory
+#second inode at 1880. represents root directory, mode is 41 ed which state its read, write, execute privleges and declare it a directory
 *
 00001880  ed 41 e8 03 00 04 00 00  d6 1c 63 53 c5 1c 63 53  |.A........cS..cS|
 00001890  c5 1c 63 53 00 00 00 00  e8 03 04 00 02 00 00 00  |..cS............|
@@ -73,7 +73,7 @@
 *
 00001ee0  00 00 00 00 4d 7f 6d a1  00 00 00 00 00 00 00 00  |....M.m.........|
 00001ef0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
-00001f00  ff a1 e8 03 0f 00 00 00  bf 1c 63 53 ab 1c 63 53  |..........cS..cS|
+00001f00  ff a1 e8 03 0f 00 00 00  bf 1c 63 53 ab 1c 63 53  |..........cS..cS| # JD: You forgot to point out the symbolic link.
 00001f10  ab 1c 63 53 00 00 00 00  e8 03 01 00 00 00 00 00  |..cS............|
 00001f20  00 00 00 00 00 00 00 00  2e 2e 2f 6e 6f 6e 45 6d  |........../nonEm|
 00001f30  70 74 79 2e 74 78 74 00  00 00 00 00 00 00 00 00  |pty.txt.........|
@@ -143,8 +143,8 @@
 # nonsense.txt address at 0e
 *
 00007400  0d 00 00 00 0c 00 01 02  2e 00 00 00 02 00 00 00  |................|
-00007410  0c 00 02 02 2e 2e 00 00  0e 00 00 00 14 00 0c 01  |................|
-00007420  6e 6f 6e 73 65 6e 73 65  2e 74 78 74 0f 00 00 00  |nonsense.txt....|
+00007410  0c 00 02 02 2e 2e 00 00  0e 00 00 00 14 00 0c 01  |................| # JD: Ideally you should note that nonsense.txt and
+00007420  6e 6f 6e 73 65 6e 73 65  2e 74 78 74 0f 00 00 00  |nonsense.txt....| #     hardie above point to the same inode.
 00007430  d4 03 06 07 73 6f 66 74  69 65 00 00 00 00 00 00  |....softie......|
 00007440  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 
